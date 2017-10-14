@@ -33,7 +33,7 @@ minetest.register_node("morethings_nodes:resource_block_salt", {
 	tiles = {"salt_block.png"},
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
-	drop = "morethings_nodes:salt_block",
+	drop = "morethings_nodes:resource_block_salt",
 	is_ground_content = true,
 })
 
