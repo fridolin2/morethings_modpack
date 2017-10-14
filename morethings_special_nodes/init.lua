@@ -241,7 +241,7 @@ local remove_item = function(pos, node)
 	end
 	if objs then
 		for _, obj in ipairs(objs) do
-			if obj and obj:get_luaentity() and obj:get_luaentity().name == "morethings:itemframe_item" then
+			if obj and obj:get_luaentity() and obj:get_luaentity().name == "morethings_special_nodes:itemframe_item" then
 				obj:remove()
 			end
 		end
