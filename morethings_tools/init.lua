@@ -17,7 +17,7 @@ minetest.register_tool("morethings_tools:red_pickaxe", {
 		full_punch_interval = 0.9,
 		max_drop_level=3,
 		groupcaps={
-			cracky = {times={[1]=1.0, [2]=0.5, [3]=0.25}, uses=15, maxlevel=3},
+			cracky = {times={[1]=1.0, [2]=0.5, [3]=0.25}, uses=150000, maxlevel=3},
 		},
 		damage_groups = {fleshy=5},
 	},
@@ -30,7 +30,7 @@ minetest.register_tool("morethings_tools:krypton_pickaxe", {
 		full_punch_interval = 0.4,
 		max_drop_level=3,
 		groupcaps={
-			cracky = {times={[1]=1.0, [2]=0.5, [3]=0.25}, uses=1500, maxlevel=3},
+			cracky = {times={[1]=1.0, [2]=0.5, [3]=0.25}, uses=150000, maxlevel=3},
 		},
 		damage_groups = {fleshy=10},
 	},
@@ -43,7 +43,7 @@ minetest.register_tool("morethings_tools:mushroom_pickaxe_red", {
 		full_punch_interval = 1.3,
 		max_drop_level=0,
 		groupcaps={
-			cracky = {times={[2]=2.0, [3]=1.0, }, uses=80, maxlevel=1},
+			cracky = {times={[2]=2.0, [3]=1.0, }, uses=900, maxlevel=1},
 		},
 		damage_groups = {fleshy=4},
 	},
@@ -56,7 +56,7 @@ minetest.register_tool("morethings_tools:mushroom_pickaxe_brown", {
 		full_punch_interval = 1.3,
 		max_drop_level=0,
 		groupcaps={
-			cracky = {times={[2]=2.0, [3]=1.0, }, uses=80, maxlevel=1},
+			cracky = {times={[2]=2.0, [3]=1.0, }, uses=900, maxlevel=1},
 		},
 		damage_groups = {fleshy=4},
 	},
@@ -92,7 +92,7 @@ minetest.register_tool("morethings_tools:red_axe", {
 		full_punch_interval = 0.9,
 		max_drop_level=3,
 		groupcaps={
-			choppy={times={[1]=1.05, [2]=0.45, [3]=0.25}, uses=15, maxlevel=3},
+			choppy={times={[1]=1.05, [2]=0.45, [3]=0.25}, uses=150000, maxlevel=3},
 		},
 		damage_groups = {fleshy=7},
 	}
@@ -106,7 +106,7 @@ minetest.register_tool("morethings_tools:krypton_axe", {
 		wield_scale = {x = 3, y = 3, z = 3},
 		max_drop_level=3,
 		groupcaps={
-			choppy={times={[1]=1.05, [2]=0.45, [3]=0.25}, uses=1500, maxlevel=3},
+			choppy={times={[1]=1.05, [2]=0.45, [3]=0.25}, uses=150000, maxlevel=3},
 		},
 		damage_groups = {fleshy=27},
 	}
@@ -162,7 +162,7 @@ minetest.register_tool("morethings_tools:red_shovel", {
 		full_punch_interval = 1.0,
 		max_drop_level=3,
 		groupcaps={
-			crumbly = {times={[1]=0.55, [2]=0.25, [3]=0.15}, uses=15, maxlevel=3},
+			crumbly = {times={[1]=0.55, [2]=0.25, [3]=0.15}, uses=150000, maxlevel=3},
 		},
 		damage_groups = {fleshy=4},
 	},
@@ -176,7 +176,7 @@ minetest.register_tool("morethings_tools:krypton_shovel", {
 		full_punch_interval = 1.0,
 		max_drop_level=3,
 		groupcaps={
-			crumbly = {times={[1]=0.55, [2]=0.25, [3]=0.15}, uses=1500, maxlevel=3},
+			crumbly = {times={[1]=0.55, [2]=0.25, [3]=0.15}, uses=150000, maxlevel=3},
 		},
 		damage_groups = {fleshy=14},
 	},
@@ -212,7 +212,7 @@ minetest.register_tool("morethings_tools:red_sword", {
 		full_punch_interval = 0.7,
 		max_drop_level=3,
 		groupcaps={
-			snappy={times={[1]=0.95, [2]=0.45, [3]=0.15}, uses=20, maxlevel=3},
+			snappy={times={[1]=0.95, [2]=0.45, [3]=0.15}, uses=20000, maxlevel=3},
 		},
 		damage_groups = {fleshy=8},
 	}
@@ -225,7 +225,7 @@ minetest.register_tool("morethings_tools:krypton_sword", {
 		full_punch_interval = 0.7,
 		max_drop_level=3,
 		groupcaps={
-			snappy={times={[1]=0.95, [2]=0.45, [3]=0.15}, uses=20000, maxlevel=3},
+			snappy={times={[1]=0.95, [2]=0.45, [3]=0.15}, uses=2000000, maxlevel=3},
 		},
 		damage_groups = {fleshy=80},
 	}
