@@ -70,7 +70,7 @@ minetest.register_tool("morethings_armor:red_leggings", {
 minetest.register_tool("morethings_armor:red_boots", {
 	description = "Red Boots",
 	inventory_image = "morethings_red_boots_inv.png",
-	groups = {armor_feet=25, armor_heal=20, armor_use=40000},
+	groups = {armor_feet=25, armor_heal=20},
 	wear = 0,
 })
 
@@ -95,7 +95,7 @@ minetest.register_tool("morethings_armor:krypton_leggings", {
 minetest.register_tool("morethings_armor:krypton_boots", {
 	description = "Krypton Boots",
 	inventory_image = "morethings_krypton_boots_inv.png",
-	groups = {armor_feet=35, armor_heal=40, armor_use=40000},
+	groups = {armor_feet=35, armor_heal=40},
 	wear = 0,
 })
  
@@ -120,7 +120,7 @@ minetest.register_tool("morethings_armor:mese_leggings", {
 minetest.register_tool("morethings_armor:mese_boots", {
 	description = "MESE Boots",
 	inventory_image = "morethings_mese_boots_inv.png",
-	groups = {armor_feet=20, armor_heal=5, physics_speed=2, physics_jump=2, armor_use=0},
+	groups = {armor_feet=20, armor_heal=5, physics_speed=2, physics_jump=2},
 	wear = 0,
 })
 
@@ -145,12 +145,13 @@ minetest.register_tool("morethings_armor:ghost_leggings", {
 minetest.register_tool("morethings_armor:ghost_boots", {
 	description = "Ghost Boots",
 	inventory_image = "morethings_ghost_boots_inv.png",
-	groups = {armor_feet=10, armor_heal=5, physics_speed=1, physics_jump=0, armor_use=400},
+	groups = {armor_feet=10, armor_heal=5, physics_speed=1, physics_jump=0},
 	wear = 0,
 })
 
 minetest.register_tool("morethings_armor:flint_helmet", {
 	description = "Flint Helmet",
+	inventory_image = "morethings_flint_helmet_inv.png",
 	inventory_image = "morethings_flint_helmet_inv.png",
 	groups = {armor_head=5, armor_heal=0, armor_use=2000},
 	wear = 0,
