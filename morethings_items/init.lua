@@ -24,6 +24,99 @@ minetest.register_alias("morethings:gold_shavings", "morethings_items:shavings_g
 
 ---DEFINE CRAFT ITEMS
 
+minetest.register_craftitem("morethings_items:ingot_coal", {
+	description = "Coal Ingot",
+	inventory_image = "morethings_coal_ingot.png",
+})
+
+minetest.register_craftitem("morethings_items:ingot_silk_touch", {
+	description = "Silk Touch Ingot",
+	inventory_image = "morethings_silk_touch_ingot.png",
+})
+
+minetest.register_craftitem("morethings_items:ingot_hermes_gold", {
+	description = "Hermes Gold Ingot",
+	inventory_image = "morethings_hermes_gold_ingot.png",
+})
+
+minetest.register_craftitem("morethings_items:pegasus_feather", {
+	description = "Pegasus Feather",
+	inventory_image = "morethings_pegasus_feather.png",
+})
+
+minetest.register_craftitem("morethings_items:cactus_spines", {
+	description = "Cactus Spines",
+	inventory_image = "morethings_cactus_spines.png",
+})
+
+minetest.register_craftitem("morethings_items:salt", {
+	description = "Salt",
+	inventory_image = "morethings_salt.png",
+})
+
+minetest.register_craftitem("morethings_items:gem_red", {
+	description = "Red Gem",
+	inventory_image = "morethings_gem_red.png",
+})
+
+minetest.register_craftitem("morethings_items:gem_black", {
+	description = "Black Gem",
+	inventory_image = "morethings_gem_black.png",
+})
+
+minetest.register_craftitem("morethings_items:gem_blue", {
+	description = "Blue Gem",
+	inventory_image = "morethings_gem_blue.png",
+})
+
+minetest.register_craftitem("morethings_items:gem_green", {
+	description = "Green Gem",
+	inventory_image = "morethings_gem_green.png",
+})
+
+minetest.register_craftitem("morethings_items:gem_light_blue", {
+	description = "Light Blue Gem",
+	inventory_image = "morethings_gem_light_blue.png",
+})
+
+minetest.register_craftitem("morethings_items:gem_light_green", {
+	description = "Light Green Gem",
+	inventory_image = "morethings_gem_light_green.png",
+})
+
+minetest.register_craftitem("morethings_items:gem_magenta", {
+	description = "Magenta Gem",
+	inventory_image = "morethings_gem_magenta.png",
+})
+
+minetest.register_craftitem("morethings_items:gem_orange", {
+	description = "Orange Gem",
+	inventory_image = "morethings_gem_orange.png",
+})
+
+minetest.register_craftitem("morethings_items:gem_pink", {
+	description = "Pink Gem",
+	inventory_image = "morethings_gem_pink.png",
+})
+
+minetest.register_craftitem("morethings_items:gem_purple", {
+	description = "Purple Gem",
+	inventory_image = "morethings_gem_purple.png",
+})
+
+minetest.register_craftitem("morethings_items:gem_white", {
+	description = "White Gem",
+	inventory_image = "morethings_gem_white.png",
+})
+
+minetest.register_craftitem("morethings_items:gem_yellow", {
+	description = "Yellow Gem",
+	inventory_image = "morethings_gem_yellow.png",
+})
+
+
+
+
 minetest.register_craftitem("morethings_items:ingot_red", {
 	description = "Red Ingot",
 	inventory_image = "morethings_red_ingot.png",
@@ -37,6 +130,11 @@ minetest.register_craftitem("morethings_items:ingot_red_empowered", {
 minetest.register_craftitem("morethings_items:red_crystal_shards", {
 	description = "Red Crystal Shards",
 	inventory_image = "morethings_red_crystal_shards.png",
+})
+
+minetest.register_craftitem("morethings_items:golden_rod", {
+	description = "Golden Rod",
+	inventory_image = "morethings_golden_rod.png",
 })
 
 minetest.register_craftitem("morethings_items:ingot_krypton_base", {
@@ -95,6 +193,11 @@ minetest.register_craftitem("morethings_items:dust_obsidian", {
 	on_use = minetest.item_eat(2)
 })
 
+minetest.register_craftitem("morethings_items:dust_chalk", {
+	description = "Chalk Dust",
+	inventory_image = "morethings_chalk_dust.png",
+})
+
 minetest.register_craftitem("morethings_items:dust_diamond", {
 	description = "Diamond Dust",
 	inventory_image = "morethings_diamond_dust.png",
@@ -136,8 +239,24 @@ minetest.register_craftitem("morethings_items:shavings_gold", {
 	inventory_image = "morethings_gold_shavings.png",
 })
 
+minetest.register_craftitem("morethings_items:bundle_of_sticks", {
+	description = "Bundle of Sticks",
+	inventory_image = "morethings_bundle_of_sticks.png",
+})
+
+minetest.register_craftitem("morethings_items:bronze_lump", {
+	description = "Bronze Lump", 
+	inventory_image = "morethings_bronze_lump.png", 
+})
 
 --Define Craftitems Craft Recipes
+
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"default:stick" 9',
+	recipe = {"morethings_items:bundle_of_sticks"},
+})
 
 minetest.register_craft({
 	output = "morethings_items:red_crystal_empowered",
@@ -158,11 +277,38 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "morethings_items:obsidian_hammer_head",
+	output = '"morethings_items:golden_rod" 2',
+	recipe = {
+		{"morethings_items:shavings_gold", "morethings_items:shavings_gold", "morethings_items:shavings_gold"},
+		{"morethings_items:shavings_gold", "default:stick", "morethings_items:shavings_gold"},
+		{"morethings_items:shavings_gold", "morethings_items:shavings_gold", "morethings_items:shavings_gold"}
+	}
+})
+
+minetest.register_craft({
+	output = '"morethings_items:obsidian_hammer_head" 16',
 	recipe = {
 		{"default:obsidian", "", ""},
 		{"", "default:obsidian", ""},
 		{"", "", "default:obsidian"}
+	}
+})
+
+minetest.register_craft({
+	output = "morethings_items:ingot_silk_touch",
+	recipe = {
+		{"morethings_items:cactus_spines", "morethings_nodes:soft_cactus", "morethings_items:cactus_spines"},
+		{"morethings_nodes:soft_cactus", "morethings_nodes:soft_cactus", "morethings_nodes:soft_cactus"},
+		{"morethings_items:cactus_spines", "morethings_nodes:soft_cactus", "morethings_items:cactus_spines"}
+	}
+})
+
+minetest.register_craft({
+	output = "morethings_items:bundle_of_sticks",
+	recipe = {
+		{"default:stick", "default:stick", "default:stick"},
+		{"default:stick", "default:stick", "default:stick"},
+		{"default:stick", "default:stick", "default:stick"}
 	}
 })
 
@@ -212,6 +358,15 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = '"morethings_items:ingot_coal" 2',  
+	recipe = {
+		{"default:coal_lump", "default:coal_lump", "default:coal_lump"},
+		{"default:coal_lump", "default:stick", "default:coal_lump"},
+		{"default:coal_lump", "default:coal_lump", "default:coal_lump"}
+	}
+})
+
+minetest.register_craft({
 	output = "morethings_items:ingot_krypton 9", 
 	recipe = {
 		{"", "", ""},
@@ -240,9 +395,6 @@ minetest.register_craft({
 
 minetest.register_craft({
 	output = "default:coal_lump 4", 
-	privs = {
-	craft = true
-	},
 	recipe = {
 		{"morethings_items:coal_crumb", "morethings_items:coal_crumb", "morethings_items:coal_crumb"},
 		{"morethings_items:coal_crumb", "morethings_items:coal_crumb", "morethings_items:coal_crumb"},

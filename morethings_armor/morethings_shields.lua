@@ -15,6 +15,21 @@ minetest.register_tool("morethings_armor:red_shield", {
 	wear = 0,
 })
 
+minetest.register_tool("morethings_armor:copper_shield", {
+	description = "Copper Shield (it´s not David!)",
+
+	inventory_image = "morethings_copper_shield_inv.png",
+	groups = {armor_shield=30, armor_heal=0, armor_use=400, armor_fire=5},
+	wear = 0,
+})
+
+minetest.register_tool("morethings_armor:tin_shield", {
+	description = "Tin Shield",
+	inventory_image = "morethings_tin_shield_inv.png",
+	groups = {armor_shield=15, armor_heal=5, armor_use=40, armor_fire=0},
+	wear = 0,
+})
+
 minetest.register_tool("morethings_armor:krypton_shield", {
 	description = "Krypton Shield",
 	inventory_image = "morethings_krypton_shield_inv.png",
@@ -69,6 +84,24 @@ minetest.register_craft({
 		{"morethings:mese_ingot", "morethings:mese_ingot", "morethings:mese_ingot"},
 		{"morethings:mese_ingot", "morethings:mese_ingot", "morethings:mese_ingot"},
 		{"", "morethings:mese_ingot", ""},
+	},
+})
+
+minetest.register_craft({
+	output = "morethings_armor:tin_shield",
+	recipe = {
+		{"default:tin_ingot", "default:tin_ingot", "default:tin_ingot"},
+		{"default:tin_ingot", "default:tin_ingot", "default:tin_ingot"},
+		{"", "default:tin_ingot", ""},
+	},
+})
+
+minetest.register_craft({
+	output = "morethings_armor:copper_shield",
+	recipe = {
+		{"default:copper_ingot", "default:copper_ingot", "default:copper_ingot"},
+		{"default:copper_ingot", "default:copper_ingot", "default:copper_ingot"},
+		{"", "default:copper_ingot", ""},
 	},
 })
 

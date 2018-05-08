@@ -1,6 +1,3 @@
-
--- Define Block Nodes
-
 ---Aliases
 minetest.register_alias("morethings:clean_glass", "morethings_nodes:clean_glass")
 minetest.register_alias("morethings:copper_tile", "morethings_nodes:tile_copper")
@@ -24,167 +21,236 @@ minetest.register_alias("morethings:steel_plate", "morethings_nodes:steel_plate"
 minetest.register_alias("morethings:carpet_brown", "morethings_nodes:carpet_brown")
 minetest.register_alias("morethings:carpet_orange", "morethings_nodes:carpet_orange")
 minetest.register_alias("morethings:lightblock", "morethings_nodes:building_lightblock")
--------Define Blocks of Resources
+
+
+dofile(minetest.get_modpath("morethings_nodes").."/allfaces.lua")
+dofile(minetest.get_modpath("morethings_nodes").."/allfaces_crafting.lua")
+dofile(minetest.get_modpath("morethings_nodes").."/arrayed_bricks.lua")
+dofile(minetest.get_modpath("morethings_nodes").."/arrayed_bricks_crafting.lua")
+dofile(minetest.get_modpath("morethings_nodes").."/barks.lua")
+dofile(minetest.get_modpath("morethings_nodes").."/barks_crafting.lua")
+dofile(minetest.get_modpath("morethings_nodes").."/mossy_blocks.lua")
+dofile(minetest.get_modpath("morethings_nodes").."/mossy_blocks_crafting.lua")
+dofile(minetest.get_modpath("morethings_nodes").."/resources.lua")
+dofile(minetest.get_modpath("morethings_nodes").."/resources_crafting.lua")
+dofile(minetest.get_modpath("morethings_nodes").."/tiles.lua")
+dofile(minetest.get_modpath("morethings_nodes").."/tiles_crafting.lua")
+dofile(minetest.get_modpath("morethings_nodes").."/morethings_pathblocks.lua")
+dofile(minetest.get_modpath("morethings_nodes").."/compressed_blocks.lua")
+dofile(minetest.get_modpath("morethings_nodes").."/chalk_blocks.lua")
 
 
 
-minetest.register_node("morethings_nodes:resource_block_salt", {
-	description = "Salt Block",
-	tiles = {"salt_block.png"},
-	groups = {cracky=3},
-	sounds = default.node_sound_stone_defaults(),
-	drop = "morethings_nodes:resource_block_salt",
+------------------
+---Define Boxes---
+------------------
+minetest.register_node("morethings_nodes:box", {
+	description = "Box",
+		
+	tiles = {
+		"morethings_box_top.png",
+		"morethings_box_bottom.png",
+		"morethings_box_side.png",
+		"morethings_box_side.png",
+		"morethings_box_side.png",
+		"morethings_box_front.png", 
+},
 	is_ground_content = true,
+	sounds = default.node_sound_wood_defaults(),
+	groups = {choppy=3, oddly_breakable_by_hand = 1, flammable = 2},
+	paramtype2 = "facedir",
+	sunlight_propagates = true,
+	walkable = true,
+	buildable_to = false,
+	paramtype = "light"
 })
 
-
-minetest.register_node("morethings_nodes:resource_block_red", {
-	description = "Red Block",
-	tiles = {"morethings_red_block.png"},
-	groups = {cracky=3},
-	sounds = default.node_sound_stone_defaults(),
-	drop = 'craft "morethings_items:ingot_red" 9',
+minetest.register_node("morethings_nodes:box_bread", {
+	description = "Bread Box",
+		
+	tiles = {
+		"morethings_box_top.png",
+		"morethings_box_bottom.png",
+		"morethings_box_side.png",
+		"morethings_box_side.png",
+		"morethings_box_side.png",
+		"morethings_box_front_bread.png", 
+},
 	is_ground_content = true,
+	sounds = default.node_sound_wood_defaults(),
+	groups = {choppy=3, oddly_breakable_by_hand = 1, flammable = 2},
+	paramtype2 = "facedir",
+	sunlight_propagates = true,
+	walkable = true,
+	buildable_to = false,
+	paramtype = "light"
 })
 
-minetest.register_node("morethings_nodes:red_block2", {
-	description = "Red Block2",
-	tiles = {"red_block2.png"},
-	groups = {cracky=3},
-	sounds = default.node_sound_stone_defaults(),
-	drop = 'craft "morethings_items:ingot_red" 9',
+minetest.register_node("morethings_nodes:box_cotton", {
+	description = "Cotton Box",
+		
+	tiles = {
+		"morethings_box_top.png",
+		"morethings_box_bottom.png",
+		"morethings_box_side.png",
+		"morethings_box_side.png",
+		"morethings_box_side.png",
+		"morethings_box_front_cotton.png", 
+},
 	is_ground_content = true,
+	sounds = default.node_sound_wood_defaults(),
+	groups = {choppy=3, oddly_breakable_by_hand = 1, flammable = 2},
+	paramtype2 = "facedir",
+	sunlight_propagates = true,
+	walkable = true,
+	buildable_to = false,
+	paramtype = "light"
 })
 
-minetest.register_node("morethings_nodes:red_block2empowered", {
-	description = "Red Block2Empowered",
-	tiles = {"red_block2empowered.png"},
-	groups = {cracky=3},
-	sounds = default.node_sound_stone_defaults(),
-	drop = 'craft "morethings_items:red_ingot" 9',
+minetest.register_node("morethings_nodes:box_wheat", {
+	description = "Wheat Box",
+		
+	tiles = {
+		"morethings_box_top.png",
+		"morethings_box_bottom.png",
+		"morethings_box_side.png",
+		"morethings_box_side.png",
+		"morethings_box_side.png",
+		"morethings_box_front_wheat.png", 
+},
 	is_ground_content = true,
+	sounds = default.node_sound_wood_defaults(),
+	groups = {choppy=3, oddly_breakable_by_hand = 1, flammable = 2},
+	paramtype2 = "facedir",
+	sunlight_propagates = true,
+	walkable = true,
+	buildable_to = false,
+	paramtype = "light"
 })
 
-minetest.register_node("morethings_nodes:resource_block_krypton", {
-	description = "Krypton Block",
-	tiles = {"morethings_krypton_block.png"},
-	groups = {cracky=3},
-	sounds = default.node_sound_stone_defaults(),
-	drop = 'craft "morethings_items:ingot_krypton" 9', 
+minetest.register_node("morethings_nodes:box_cotton_seed", {
+	description = "Cotton Seed Box",
+		
+	tiles = {
+		"morethings_box_top.png",
+		"morethings_box_bottom.png",
+		"morethings_box_side.png",
+		"morethings_box_side.png",
+		"morethings_box_side.png",
+		"morethings_box_front_cotton_seed.png", 
+},
 	is_ground_content = true,
+	sounds = default.node_sound_wood_defaults(),
+	groups = {choppy=3, oddly_breakable_by_hand = 1, flammable = 2},
+	paramtype2 = "facedir",
+	sunlight_propagates = true,
+	walkable = true,
+	buildable_to = false,
+	paramtype = "light"
 })
 
-minetest.register_node("morethings_nodes:resource_block_flint", {
-	description = "Flint Block",
-	tiles = {"morethings_flint_block.png"},
-	groups = {cracky=3},
-	sounds = default.node_sound_stone_defaults(),
-	drop = 'craft "default:flint" 9',
+minetest.register_node("morethings_nodes:box_wheat_seed", {
+	description = "Wheat Seed Box",
+		
+	tiles = {
+		"morethings_box_top.png",
+		"morethings_box_bottom.png",
+		"morethings_box_side.png",
+		"morethings_box_side.png",
+		"morethings_box_side.png",
+		"morethings_box_front_wheat_seed.png", 
+},
 	is_ground_content = true,
+	sounds = default.node_sound_wood_defaults(),
+	groups = {choppy=3, oddly_breakable_by_hand = 1, flammable = 2},
+	paramtype2 = "facedir",
+	sunlight_propagates = true,
+	walkable = true,
+	buildable_to = false,
+	paramtype = "light"
 })
-
-minetest.register_node("morethings_nodes:resource_block_ghost", {
-	description = "Ghost Block",
-	drawtype = "glasslike",
-	tiles = {"morethings_ghost_block.png"},
-	light_source = default.LIGHT_MAX - 14,
-	groups = {cracky=3},
-	sounds = default.node_sound_stone_defaults(),
-	drop = 'craft "morethings_items:ingot_ghost" 9',
-	is_ground_content = true,
-})
--------Define Tiles
-
-minetest.register_node("morethings_nodes:tile", {
-	description = "Tile",
-	tiles = {"morethings_tile.png"},
-	groups = {stone=2, cracky=3},
-	sounds = default.node_sound_stone_defaults(),
-	drop = "morethings_nodes:tile",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:tile_mossy", {
-	description = "Mossy Tile",
-	tiles = {"morethings_mossy_tile.png"},
-	groups = {cracky=3},
-	sounds = default.node_sound_stone_defaults(),
-	drop = "morethings_nodes:tile",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:tile_iron", {
-	description = "Iron Tile",
-	tiles = {"morethings_iron_tile.png"},
-	groups = {cracky=3},
-	sounds = default.node_sound_stone_defaults(),
-	drop = "morethings_nodes:tile_iron",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:tile_copper", {
-	description = "Copper Tile",
-	tiles = {"morethings_copper_tile.png"},
-	groups = {cracky=3},
-	drop = "morethings_nodes:tile_copper",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:tile_bronze", {
-	description = "Bronze Tile",
-	tiles = {"morethings_bronze_tile.png"},
-	groups = {cracky=3},
-	sounds = default.node_sound_stone_defaults(),
-	drop = "morethings_nodes:tile_bronze",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:tile_gold", {
-	description = "Gold Tile",
-	tiles = {"morethings_gold_tile.png"},
-	groups = {cracky=3},
-	sounds = default.node_sound_stone_defaults(),
-	drop = "morethings_nodes:tile_gold",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:tile_mese", {
-	description = "MESE Tile",
-	tiles = {"morethings_mese_tile.png"},
-	groups = {cracky=3},
-	sounds = default.node_sound_stone_defaults(),
-	drop = "morethings_nodes:tile_mese",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:tile_diamond", {
-	description = "Diamond Tile",
-	tiles = {"morethings_diamond_tile.png"},
-	groups = {cracky=3},
-	sounds = default.node_sound_stone_defaults(),
-	drop = "morethings_nodes:tile_diamond",
-	is_ground_content = true,
-})
-
--------Define Other Blocks
-
-minetest.register_node("morethings_nodes:random_block", {
+-------------------------
+---Define other Blocks---
+-------------------------
+minetest.register_node("morethings_nodes:building_random_block", {
 	description = "Random Block",
 	tiles = {"morethings_random_block.png"},
 	paramtype2 = "facedir",
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
-	drop = "morethings_nodes:random_block",
 	is_ground_content = true,
 })
 
-minetest.register_node("morethings_nodes:fan_block_transparent", {
+minetest.register_node("morethings_nodes:building_concrete", {
+	description = "Concrete",
+	tiles = {"morethings_concrete.png"},
+	paramtype2 = "facedir",
+	groups = {cracky=3},
+	sounds = default.node_sound_stone_defaults(),
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_nodes:building_concrete_powder", {
+	description = "Concrete Powder",
+	tiles = {"morethings_concrete_powder.png"},
+	paramtype2 = "facedir",
+	groups = {crumbly = 2, falling_node = 1},
+	sounds = default.node_sound_gravel_defaults(),
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_nodes:building_obsidian_powder", {
+	description = "Obsidian Powder",
+	tiles = {"morethings_obsidian_powder.png"},
+	paramtype2 = "facedir",
+	groups = {crumbly = 2, falling_node = 1},
+	sounds = default.node_sound_gravel_defaults(),
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_nodes:building_diamond_powder", {
+	description = "Diamond Powder",
+	tiles = {"morethings_diamond_powder.png"},
+	paramtype2 = "facedir",
+	groups = {crumbly = 2, falling_node = 1},
+	sounds = default.node_sound_gravel_defaults(),
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_nodes:building_refined_obsidian_powder", {
+	description = "Refined Obsidian Powder",
+	tiles = {"morethings_refined_obsidian_powder.png"},
+	paramtype2 = "facedir",
+	groups = {crumbly = 2, falling_node = 1},
+	sounds = default.node_sound_gravel_defaults(),
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_nodes:building_laminat", {
+	description = "Laminat",
+	tiles = {"morethings_laminat.png"},
+	paramtype2 = "facedir",
+	groups = {choppy=3, oddly_breakable_by_hand = 1, flammable = 2},
+	sounds = default.node_sound_wood_defaults(),
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_nodes:building_parkett", {
+	description = "Parkett",
+	tiles = {"morethings_parkett.png"},
+	paramtype2 = "facedir",
+	groups = {choppy=3, oddly_breakable_by_hand = 1, flammable = 2},
+	sounds = default.node_sound_wood_defaults(),
+	drop = "morethings_nodes:building_parkett",
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_nodes:_building_fan_block_transparent", {
 		description = "Transparent Fan",
 		tiles = {"morethings_fan_transparent_block.png"},
 		is_ground_content = true,
 		sounds = default.node_sound_stone_defaults(),
-		groups = {cracky = 3},
-		drop = "morethings_nodes:fan_block_transparent",
+		groups = {cracky=3},
 		sunlight_propagates = true,
 		drawtype = "glasslike",
 		walkable = true,
@@ -193,13 +259,88 @@ minetest.register_node("morethings_nodes:fan_block_transparent", {
 		paramtype = "light"
 })
 
-core.register_node("morethings_nodes:clean_glass", {
+minetest.register_node("morethings_nodes:soft_cactus", {
+	description = "Soft Cactus",
+		
+	tiles = {
+		"morethings_soft_cactus_top.png",
+		"morethings_soft_cactus_bottom.png",
+		"morethings_soft_cactus_sides.png",
+		"morethings_soft_cactus_sides.png",
+		"morethings_soft_cactus_sides.png",
+		"morethings_soft_cactus_sides.png", 
+},
+	is_ground_content = true,
+	sounds = default.node_sound_wood_defaults(),
+	groups = {choppy=3, oddly_breakable_by_hand = 1, flammable = 2},
+	paramtype2 = "facedir",
+	sunlight_propagates = true,
+	walkable = true,
+	buildable_to = false,
+	paramtype = "light"
+})
+
+minetest.register_craft( {
+	type = "shapeless", 
+	output = '"morethings_items:cactus_spines" 4',
+	recipe = {"default:cactus", "default:cactus"},
+})
+
+----------------------------
+---Define Worldgen Blocks---
+----------------------------
+minetest.register_node("morethings_nodes:building_vulcanit", {
+		description = "Vulcanit",
+		tiles = {"morethings_vulcanit.png"},
+		is_ground_content = true,
+		sounds = default.node_sound_stone_defaults(),
+		groups = {cracky=3},
+		light_source = default.LIGHT_MAX - 2,
+		sunlight_propagates = true,
+		walkable = true,
+		damage_per_second = 1,
+		buildable_to = false,
+		inventory_image = {"morethings_vulcanit.png"},
+		paramtype = "light"
+})
+
+minetest.register_node("morethings_nodes:building_basalt", {
+		description = "Basalt",
+		tiles = {"morethings_basalt.png"},
+		is_ground_content = true,
+		sounds = default.node_sound_stone_defaults(),
+		groups = {cracky=3},
+		sunlight_propagates = true,
+		walkable = true,
+		buildable_to = false,
+		inventory_image = {"morethings_basalt.png"},
+		paramtype = "light"
+})
+
+minetest.register_node("morethings_nodes:building_basalt_dark", {
+		description = "Dark Basalt",
+		tiles = {"morethings_basalt_dark.png"},
+		is_ground_content = true,
+		sounds = default.node_sound_stone_defaults(),
+		groups = {cracky=3},
+		sunlight_propagates = true,
+		walkable = true,
+		buildable_to = false,
+		inventory_image = {"morethings_basalt_dark.png"},
+		paramtype = "light"
+})
+
+
+
+------------------
+---Define Glass---
+------------------
+minetest.register_node("morethings_nodes:building_clean_glass", {
 		description = "Clean Glass",
 		tiles = {"morethings_clean_glass.png"},
 		is_ground_content = true,
 		sounds = default.node_sound_stone_defaults(),
-		groups = {cracky = 3},
-		drop = "morethings_nodes:clean_glass",
+		groups = {cracky=3},
 		sunlight_propagates = true,
 		drawtype = "glasslike",
 		walkable = true,
@@ -208,538 +349,134 @@ core.register_node("morethings_nodes:clean_glass", {
 		paramtype = "light"
 })
 
-minetest.register_node("morethings_nodes:building_concrete", {
-	description = "Concrete",
-	tiles = {"morethings_concrete.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:building_concrete",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:building_laminat", {
-	description = "Laminat",
-	tiles = {"morethings_laminat.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:building_laminat",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:building_parkett", {
-	description = "Parkett",
-	tiles = {"morethings_parkett.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:building_parkett",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:steel_plate", {
-	description = "Steel Plate",
-	drawtype = "glasslike_framed",
-
-	tiles = {"steel_plate.png", "steel_plate_2.png"},
-	inventory_image = minetest.inventorycube("steel_plate.png"),
-
-	paramtype = "light",
-	sunlight_propagates = true,
-	is_ground_content = true,
-
-	groups = {cracky = 3, },
-	sounds = default.node_sound_stone_defaults()
-})
-
-minetest.register_node("morethings_nodes:future_block", {
-	description = "Future Block",
-	tiles = {
-		{name="morethings_future_block.png", animation={type="vertical_frames",
-		aspect_w=16, aspect_h=16, length=2}},
-	},
-	paramtype = "light",
-	sunlight_propagates = true,
-	is_ground_content = true,
-
-	groups = {cracky = 3, },
-	sounds = default.node_sound_stone_defaults()
-})
-
-
-minetest.register_node("morethings_nodes:carpet_brown", {
-	description = "Brown Carpet",
-	drawtype = "glasslike_framed",
-
-	tiles = {"morethings_carpet_brown.png", "morethings_carpet_brown_full.png"},
-	inventory_image = minetest.inventorycube("morethings_carpet_brown.png"),
-
-	paramtype = "light",
-	sunlight_propagates = true,
-	is_ground_content = true,
-
-	groups = {cracky = 3, },
-	sounds = default.node_sound_stone_defaults()
-})
-
-minetest.register_node("morethings_nodes:carpet_orange", {
-	description = "Orange Carpet",
-	drawtype = "glasslike_framed",
-
-	tiles = {"morethings_carpet_orange.png", "morethings_carpet_orange_full.png"},
-	inventory_image = minetest.inventorycube("morethings_carpet_orange.png"),
-
-	paramtype = "light",
-	sunlight_propagates = true,
-	is_ground_content = true,
-
-	groups = {cracky = 3, },
-	sounds = default.node_sound_stone_defaults()
-})
-
--------Define Mossy Blocks
-
-minetest.register_node("morethings_nodes:moss", {
-	description = "Moss",
-	drawtype = "signlike",
-	tiles = {"morethings_moss.png"},
-	inventory_image = "morethings_moss.png",
-	wield_image = "morethings_moss.png",
-	paramtype = "light",
-	paramtype2 = "wallmounted",
-	sunlight_propagates = true,
-	walkable = false,
-	climbable = true,
-	is_ground_content = false,
-	selection_box = {
-		type = "wallmounted",
-		--wall_top = = <default>
-		--wall_bottom = = <default>
-		--wall_side = = <default>
-	},
-	groups = {cracky = 2},
-	sounds = default.node_sound_leaves_defaults(),
-})
-
-minetest.register_node("morethings_nodes:mossy_stonebrick", {
-	description = "Mossy Stonebrick",
-	tiles = {"default_stone_brick.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_stonebrick",
-	is_ground_content = true,
-})
-minetest.register_node("morethings_nodes:mossy_stone_block", {
-	description = "Mossy Stone Block",
-	tiles = {"default_stone_block.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_stone_block",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:mossy_stone", {
-	description = "Mossy Stone",
-	tiles = {"default_stone.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_stone",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:mossy_desert_stonebrick", {
-	description = "Mossy Desert Stonebrick",
-	tiles = {"default_desert_stone_brick.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_desert_stonebrick",
-	is_ground_content = true,
-})
-minetest.register_node("morethings_nodes:mossy_desert_stone_block", {
-	description = "Mossy Desert Stoen Block",
-	tiles = {"default_desert_stone_block.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_desert_stone_block",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:mossy_desert_stone", {
-	description = "Mossy Desert Stone",
-	tiles = {"default_desert_stone.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_desert_stone",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:mossy_stone_tile", {
-	description = "Mossy Stone Tile",
-	tiles = {"moreblocks_stone_tile.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_stone_tile",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:mossy_iron_stone", {
-	description = "Mossy Iron Stone",
-	tiles = {"moreblocks_iron_stone.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_iron_stone",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:mossy_iron_stone_bricks", {
-	description = "Mossy Iron Stone Bricks",
-	tiles = {"moreblocks_iron_stone_bricks.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_iron_stone_bricks",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:mossy_coal_stone", {
-	description = "Mossy Coal Stone",
-	tiles = {"moreblocks_coal_stone.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_coal_stone",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:mossy_coal_stone_bricks", {
-	description = "Mossy Coal Stone Bricks",
-	tiles = {"moreblocks_coal_stone_bricks.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_coal_stone_bricks",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:mossy_circle_stone", {
-	description = "Mossy Circle Stone",
-	tiles = {"moreblocks_circle_stone_bricks.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_circle_stone",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:mossy_silver_sandstone_brick", {
-	description = "Mossy Silver Sandstone Brick",
-	tiles = {"default_silver_sandstone_brick.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_silver_sandstone_brick",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:mossy_silver_sandstone_block", {
-	description = "Mossy Silver Sandstone Block",
-	tiles = {"default_silver_sandstone_block.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_silver_sandstone_block",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:mossy_silver_sandstone", {
-	description = "Mossy Silver Sandstone",
-	tiles = {"default_silver_sandstone.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_silver_sandstone",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:mossy_sandstone_brick", {
-	description = "Mossy Sandstone Brick",
-	tiles = {"default_sandstone_brick.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_sandstone_brick",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:mossy_sandstone_block", {
-	description = "Mossy Sandstone Block",
-	tiles = {"default_sandstone_block.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_sandstone_block",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:mossy_sandstone", {
-	description = "Mossy Sandstone",
-	tiles = {"default_sandstone.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_sandstone",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:mossy_desert_sandstone_brick", {
-	description = "Mossy Desert Sandstone Brick",
-	tiles = {"default_desert_sandstone_brick.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_desert_sandstone_brick",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:mossy_desert_sandstone_block", {
-	description = "Mossy Desert Sandstone Block",
-	tiles = {"default_desert_sandstone_block.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy_desert_sandstone_block",
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:mossy_desert_sandstone", {
-	description = "Mossy Desert Sandstone",
-	tiles = {"default_desert_sandstone.png^morethings_moss.png"},
-	paramtype2 = "facedir",
-	groups = {cracky=3},
-	sounds = default.node_sound_wood_defaults(),
-	drop = "morethings_nodes:mossy",
-	is_ground_content = true,
-})
--------Define Stairs
-
-
-
--------Define glasses
-minetest.register_node("morethings_nodes:clean_glass_moreblocks", {
+minetest.register_node("morethings_nodes:building_clean_glass_moreblocks", {
 	description = "Clean Glass",
 	drawtype = "glasslike_framed",
-
 	tiles = {"moreblocks_clean_glass.png", "morethings_moreblocks_clean_glass_full.png"},
 	inventory_image = minetest.inventorycube("moreblocks_clean_glass.png"),
-
 	paramtype = "light",
 	sunlight_propagates = true,
 	is_ground_content = true,
-
 	groups = {cracky = 3, },
 	sounds = default.node_sound_glass_defaults()
 })
+-----------------------
+---Define Full Grass---
+-----------------------
+minetest.register_node("morethings_nodes:full_block_grass", {
+	description = "Full Grass",
+	tiles = {"default_grass.png"},
+	paramtype2 = "facedir",
+	groups = {crumbly=3},
+	sounds = default.node_sound_dirt_defaults(),
+	is_ground_content = true,
+})
 
--------Define Light Blocks
+minetest.register_node("morethings_nodes:full_block__dry_grass", {
+	description = "Full Dry Grass",
+	tiles = {"default_dry_grass.png"},
+	paramtype2 = "facedir",
+	groups = {crumbly=3},
+	sounds = default.node_sound_dirt_defaults(),
+	is_ground_content = true,
+})
 
+minetest.register_node("morethings_nodes:full_block_bamboo_grass", {
+	description = "Full Bamboo Grass ",
+	tiles = {"ethereal_grass_bamboo_top.png"},
+	paramtype2 = "facedir",
+	groups = {crumbly=3},
+	sounds = default.node_sound_dirt_defaults(),
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_nodes:full_block_cold_grass", {
+	description = "Full Cold Grass",
+	tiles = {"ethereal_grass_cold_top.png"},
+	paramtype2 = "facedir",
+	groups = {crumbly=3},
+	sounds = default.node_sound_dirt_defaults(),
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_nodes:full_block_crystal_grass", {
+	description = "Full Grass",
+	tiles = {"ethereal_grass_crystal_top.png"},
+	paramtype2 = "facedir",
+	groups = {crumbly=3},
+	sounds = default.node_sound_dirt_defaults(),
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_nodes:full_block_fiery_grass", {
+	description = "Full Fiery Grass",
+	tiles = {"ethereal_grass_fiery_top.png"},
+	paramtype2 = "facedir",
+	groups = {crumbly=3},
+	sounds = default.node_sound_dirt_defaults(),
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_nodes:full_block_gray_grass", {
+	description = "Full Gray Grass",
+	tiles = {"ethereal_grass_gray_top.png"},
+	paramtype2 = "facedir",
+	groups = {crumbly=3},
+	sounds = default.node_sound_dirt_defaults(),
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_nodes:full_block_grove_grass", {
+	description = "Full Grove Grass",
+	tiles = {"ethereal_grass_grove_top.png"},
+	paramtype2 = "facedir",
+	groups = {crumbly=3},
+	sounds = default.node_sound_dirt_defaults(),
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_nodes:full_block_jungle_grass", {
+	description = "Full Jungle Grass",
+	tiles = {"ethereal_grass_jungle_top.png"},
+	paramtype2 = "facedir",
+	groups = {crumbly=3},
+	sounds = default.node_sound_dirt_defaults(),
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_nodes:full_block_mushroom_grass", {
+	description = "Full Mushroom Grass",
+	tiles = {"ethereal_grass_mushroom_top.png"},
+	paramtype2 = "facedir",
+	groups = {crumbly=3},
+	sounds = default.node_sound_dirt_defaults(),
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_nodes:full_block_prairie_grass", {
+	description = "Full Prairie Grass",
+	tiles = {"ethereal_grass_prairie_top.png"},
+	paramtype2 = "facedir",
+	groups = {crumbly=3},
+	sounds = default.node_sound_dirt_defaults(),
+	is_ground_content = true,
+})
+-------------------------
+---Define Light Blocks---
+-------------------------
 minetest.register_node("morethings_nodes:building_lightblock", {
 	description = "Light Block",
 	tiles = {"morethings_lightblock.png"},
 	light_source = default.LIGHT_MAX - 14,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
-	drop = "morethings_nodes:lightblock",
 	is_ground_content = true,
 })
-
---Define Block Crafting recipes
-
-
----Moss Recipes
-
+-----------------------------------
+---Define Block Crafting recipes---
+-----------------------------------
 minetest.register_craft({
-	output = "morethings_nodes:moss",
-	recipe = {
-		{"", "group:leaves", ""},
-		{"group:leaves", "", "group:leaves"},
-		{"", "group:leaves", ""}
-	}
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_stone_tile",
-	recipe = {"morethings_nodes:moss", "moreblocks:stone_tile"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_circle_stone",
-	recipe = {"morethings_nodes:moss", "moreblocks:circle_stone_bricks"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_coal_stone",
-	recipe = {"morethings_nodes:moss", "moreblocks:coal_stone"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_coal_stone_bricks",
-	recipe = {"morethings_nodes:moss", "moreblocks:coal_stone_bricks"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_desert_sandstone",
-	recipe = {"morethings_nodes:moss", "default:desert_sandstone"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_desert_sandstone_block",
-	recipe = {"morethings_nodes:moss", "default:desert_sandstone_block"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_desert_sandstone_brick",
-	recipe = {"morethings_nodes:moss", "default:desert_sandstone_brick"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_desert_stone",
-	recipe = {"morethings_nodes:moss", "default:desert_stone"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_desert_stone_block",
-	recipe = {"morethings_nodes:moss", "default:desert_stone_block"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_desert_stonebrick",
-	recipe = {"morethings_nodes:moss", "default:desert_stonebrick"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_iron_stone",
-	recipe = {"morethings_nodes:moss", "moreblocks:iron_stone"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_iron_stone_bricks",
-	recipe = {"morethings_nodes:moss", "moreblocks:iron_stone_bricks"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_sandstone",
-	recipe = {"morethings_nodes:moss", "default:sandstone"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_sandstone_block",
-	recipe = {"morethings_nodes:moss", "default:sandstone_block"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_sandstone_brick",
-	recipe = {"morethings_nodes:moss", "default:sandstonebrick"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_silver_sandstone",
-	recipe = {"morethings_nodes:moss", "default:silver_sandstone"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_silver_sandstone_block",
-	recipe = {"morethings_nodes:moss", "default:silver_sandstone_block"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_silver_sandstone_brick",
-	recipe = {"morethings_nodes:moss", "default:silver_sandstone_brick"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_stone",
-	recipe = {"morethings_nodes:moss", "default:stone"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_stone_block",
-	recipe = {"morethings_nodes:moss", "default:stone_block"},
-})
-
-minetest.register_craft( {
-	type = "shapeless",
-	output = "morethings_nodes:mossy_stonebrick",
-	recipe = {"morethings_nodes:moss", "default:stonebrick"},
-})
-
-
-minetest.register_craft({
-	output = "morethings_nodes:resource_block_red",
-	recipe = {
-		{"morethings_items:ingot_red", "morethings_items:ingot_red", "morethings_items:ingot_red"},
-		{"morethings_items:ingot_red", "morethings_items:ingot_red", "morethings_items:ingot_red"},
-		{"morethings_items:ingot_red", "morethings_items:ingot_red", "morethings_items:ingot_red"}
-	}
-})
-
-minetest.register_craft({
-	output = "morethings_nodes:resource_block_krypton",
-	recipe = {
-		{"morethings_items:ingot_krypton", "morethings_items:ingot_krypton", "morethings_items:ingot_krypton"},
-		{"morethings_items:ingot_krypton", "morethings_items:ingot_krypton", "morethings_items:ingot_krypton"},
-		{"morethings_items:ingot_krypton", "morethings_items:ingot_krypton", "morethings_items:ingot_krypton"}
-	}
-})
-
-minetest.register_craft({
-	output = "morethings_nodes:resource_block_ghost",
-	recipe = {
-		{"morethings_items:ingot_ghost", "morethings_items:ingot_ghost", "morethings_items:ingot_ghost"},
-		{"morethings_items:ingot_ghost", "morethings_items:ingot_ghost", "morethings_items:ingot_ghost"},
-		{"morethings_items:ingot_ghost", "morethings_items:ingot_ghost", "morethings_items:ingot_ghost"}
-	}
-})
-
-minetest.register_craft({
-	output = "morethings_nodes:resource_block_flint",
-	recipe = {
-		{"default:flint", "default:flint", "default:flint"},
-		{"default:flint", "default:flint", "default:flint"},
-		{"default:flint", "default:flint", "default:flint"}
-	}
-})
-
-minetest.register_craft({
-	output = "morethings_nodes:building_lightblock",
+	output = '"morethings_nodes:building_lightblock" 8',
 	recipe = {
 		{"default:stone", "default:cobble", "default:stone"},
 		{"default:cobble", "default:torch", "default:cobble"},
@@ -747,8 +484,101 @@ minetest.register_craft({
 	}
 })
 
+
+
 minetest.register_craft({
-	output = "morethings_nodes:random_block",
+	output = '"morethings_nodes:path_block" 8',
+	recipe = {
+		{"group:sand", "group:sand", "group:sand"},
+		{"default:dirt", "default:dirt", "default:dirt"},
+		{"default:dirt", "default:dirt", "default:dirt"}
+	}
+})
+
+minetest.register_craft({
+	output = '"morethings_nodes:path_block_crossing" 4',
+	recipe = {
+		{"", "morethings_nodes:path_block", ""},
+		{"morethings_nodes:path_block", "morethings_nodes:path_block", "morethings_nodes:path_block"},
+		{"", "morethings_nodes:path_block", ""}
+	}
+})
+
+minetest.register_craft({
+	output = '"morethings_nodes:path_block_turn" 6',
+	recipe = {
+		{"morethings_nodes:path_block", "", "morethings_nodes:path_block"},
+		{"morethings_nodes:path_block", "", "morethings_nodes:path_block"},
+		{"morethings_nodes:path_block", "", "morethings_nodes:path_block"}
+	}
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_nodes:building_basalt_dark" 3',
+	recipe = {"morethings_nodes:building_basalt", "default:obsidian"},
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = "morethings_nodes:box_bread",
+	recipe = {"morethings_nodes:box", "farming:bread"},
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = "morethings_nodes:box_cotton",
+	recipe = {"morethings_nodes:box", "farming:cotton"},
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = "morethings_nodes:box_wheat",
+	recipe = {"morethings_nodes:box", "farming:wheat"},
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = "morethings_nodes:box_cotton_seed",
+	recipe = {"morethings_nodes:box", "farming:seed_cotton"},
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = "morethings_nodes:box_wheat_seed",
+	recipe = {"morethings_nodes:box", "farming:seed_wheat"},
+})
+
+
+minetest.register_craft({
+	output = "morethings_nodes:box",
+	recipe = {
+		{"default:wood", "default:wood", "default:wood"},
+		{"default:wood", "default:chest", "default:wood"},
+		{"default:wood", "default:wood", "default:wood"}
+	}
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_items:dust_diamond" 9',
+	recipe = {"morethings_nodes:building_diamond_powder"},
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_items:dust_obsidian" 9',
+	recipe = {"morethings_nodes:building_obsidian_powder"},
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_items:dust_refined_obsidian" 9',
+	recipe = {"morethings_nodes:building_refined_obsidian_powder"},
+})
+
+minetest.register_craft({
+	output = "morethings_nodes:building_random_block",
 	recipe = {
 		{"morethings_items:ingot_red_empowered", "morethings_items:ingot_red_empowered", "morethings_items:ingot_obsidian"},
 		{"morethings_items:ingot_red_empowered", "morethings_items:ingot_red_empowered", "morethings_items:ingot_obsidian"},
@@ -757,7 +587,43 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "morethings:building_parkett",
+	output = "morethings_nodes:building_obsidian_powder",
+	recipe = {
+		{"morethings_items:dust_obsidian", "morethings_items:dust_obsidian", "morethings_items:dust_obsidian"},
+		{"morethings_items:dust_obsidian", "morethings_items:dust_obsidian", "morethings_items:dust_obsidian"},
+		{"morethings_items:dust_obsidian", "morethings_items:dust_obsidian", "morethings_items:dust_obsidian"}
+	}
+})
+
+minetest.register_craft({
+	output = "morethings_nodes:building_diamond_powder",
+	recipe = {
+		{"morethings_items:dust_diamond", "morethings_items:dust_diamond", "morethings_items:dust_diamond"},
+		{"morethings_items:dust_diamond", "morethings_items:dust_diamond", "morethings_items:dust_diamond"},
+		{"morethings_items:dust_diamond", "morethings_items:dust_diamond", "morethings_items:dust_diamond"}
+	}
+})
+
+minetest.register_craft({
+	output = "morethings_nodes:building_refined_obsidian_powder",
+	recipe = {
+		{"morethings_items:dust_refined_obsidian", "morethings_items:dust_refined_obsidian", "morethings_items:dust_refined_obsidian"},
+		{"morethings_items:dust_refined_obsidian", "morethings_items:dust_refined_obsidian", "morethings_items:dust_refined_obsidian"},
+		{"morethings_items:dust_refined_obsidian", "morethings_items:dust_refined_obsidian", "morethings_items:dust_refined_obsidian"}
+	}
+})
+
+minetest.register_craft({
+	output = '"morethings_nodes:building_concrete_powder" 8',
+	recipe = {
+		{"default:sand", "default:gravel", "default:sand"},
+		{"default:gravel", "default:sand", "default:gravel"},
+		{"default:sand", "default:gravel", "default:sand"}
+	}
+})
+
+minetest.register_craft({
+	output = '"morethings_nodes:building_parkett" 8',
 	recipe = {
 		{"default:junglewood", "default:wood", "default:junglewood"},
 		{"default:wood", "default:junglewood", "default:wood"},
@@ -766,7 +632,7 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "morethings_nodes:building_laminat",
+	output = '"morethings_nodes:building_laminat" 8',
 	recipe = {
 		{"default:wood", "default:junglewood", "default:wood"},
 		{"default:junglewood", "default:wood", "default:junglewood"},
@@ -775,82 +641,29 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "morethings_nodes:tile",
+	output = '"morethings_nodes:building_clean_glass" 9',
 	recipe = {
-		{"", "default:stone", ""},
-		{"default:stone", "default:stone", "default:stone"},
-		{"", "default:stone", ""}
+		{"default:glass", "default:glass", "default:glass"},
+		{"default:glass", "default:glass", "default:glass"},
+		{"default:glass", "default:glass", "default:glass"}
 	}
 })
 
 minetest.register_craft({
-	output = "morethings_nodes:tile_iron 6",
+	output = '"morethings_nodes:building_clean_glass_moreblocks" 9',
 	recipe = {
-		{"", "", ""},
-		{"default:steel_ingot", "morethings_nodes:tile", ""},
-		{"", "", ""}
+		{"morethings_nodes:building_clean_glass", "morethings_nodes:building_clean_glass", "morethings_nodes:building_clean_glass"},
+		{"morethings_nodes:building_clean_glass", "morethings_nodes:building_clean_glass", "morethings_nodes:building_clean_glass"},
+		{"morethings_nodes:building_clean_glass", "morethings_nodes:building_clean_glass", "morethings_nodes:building_clean_glass"}
 	}
 })
 
 minetest.register_craft({
-	output = "morethings_nodes:tile_copper 6",
+	output = '"morethings_nodes:_building_fan_block_transparent" 2',
 	recipe = {
-		{"", "", ""},
-		{"default:copper_ingot", "morethings_nodes:tile", ""},
-		{"", "", ""}
+		{"default:steel_ingot", "default:glass", "default:steel_ingot"},
+		{"default:glass", "default:obsidian", "default:glass"},
+		{"default:steel_ingot", "default:glass", "default:steel_ingot"}
 	}
 })
 
-minetest.register_craft({
-	output = "morethings_nodes:tile_bronze 6",
-	recipe = {
-		{"", "", ""},
-		{"default:bronze_ingot", "morethings_nodes:tile", ""},
-		{"", "", ""}
-	}
-})
-
-minetest.register_craft({
-	output = "morethings_nodes:tile_gold 6",
-	recipe = {
-		{"", "", ""},
-		{"default:gold_ingot", "morethings_nodes:tile", ""},
-		{"", "", ""}
-	}
-})
-
-minetest.register_craft({
-	output = "morethings_nodes:tile_mossy 6",
-	recipe = {
-		{"", "", ""},
-		{"default:mossycobble", "morethings_nodes:tile", ""},
-		{"", "", ""}
-	}
-})
-
-minetest.register_craft({
-	output = "morethings_nodes:tile_mese 16",
-	recipe = {
-		{"", "", ""},
-		{"default:mese_crystal", "morethings_nodes:tile", ""},
-		{"", "", ""}
-	}
-})
-
-minetest.register_craft({
-	output = "morethings_nodes:tile_mese 2",
-	recipe = {
-		{"", "", ""},
-		{"default:mese_shard", "morethings_nodes:tile", ""},
-		{"", "", ""}
-	}
-})
-
-minetest.register_craft({
-	output = "morethings_nodes:tile_diamond 20",
-	recipe = {
-		{"", "", ""},
-		{"default:diamond", "morethings_nodes:tile", ""},
-		{"", "", ""}
-	}
-})

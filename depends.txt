@@ -1,0 +1,12 @@
+ethereal
+quartz
+moreores
+moreblocks
+mesecons
+3d_armor
+3d_armor_stand
+3d_armor_ui
+pipeworks
+rainbow_ore
+shields
+unified_inventory

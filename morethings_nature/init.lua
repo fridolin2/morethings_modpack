@@ -6,8 +6,11 @@ minetest.register_alias("morethings:papyrus_gold", "morethings_nature:papyrus_go
 minetest.register_alias("morethings:papyrus_mese", "morethings_nature:papyrus_mese")
 minetest.register_alias("morethings:papyrus_diamond", "morethings_nature:papyrus_diamond")
 minetest.register_alias("morethings:papyrus_copper", "morethings_nature:papyrus_copper")
--- register Ore Papyrus
-
+dofile(minetest.get_modpath("morethings_nature").."/flowers.lua")
+dofile(minetest.get_modpath("morethings_nature").."/flowers_crafting.lua")
+dofile(minetest.get_modpath("morethings_nature").."/vines.lua")
+dofile(minetest.get_modpath("morethings_nature").."/vines_crafting.lua")
+-- register Ore Papyrus 
 
 core.register_node("morethings_nature:papyrus_stone", {
 	description = "Stone Papyrus",
@@ -37,7 +40,7 @@ core.register_node("morethings_nature:papyrus_paper", {
 	tiles = {"morethings_paperpyrus.png"},
 	inventory_image = "morethings_paperpyrus.png",
 	wield_image = "morethings_paperpyrus.png",
-	drop = "morethings:scraps_of_paper 2",
+	drop = '"morethings_items:scraps_of_paper" 3',
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
@@ -62,7 +65,7 @@ core.register_node("morethings_nature:papyrus_dye", {
 	},
 	inventory_image = "morethings_papyrus_dye.png",
 	wield_image = "morethings_papyrus_dye.png",
-	drop = "morethings:dye_lump",
+	drop = '"morethings_items:dye_lump" 3',
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
@@ -84,7 +87,7 @@ core.register_node("morethings_nature:papyrus_coal", {
 	tiles = {"morethings_papyrus_coal.png"},
 	inventory_image = "morethings_papyrus_coal.png",
 	wield_image = "morethings_papyrus_coal.png",
-	drop = "morethings:coal_crumb",
+	drop = "morethings_items:coal_crumb",
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
@@ -106,7 +109,7 @@ core.register_node("morethings_nature:papyrus_iron", {
 	tiles = {"morethings_papyrus_iron.png"},
 	inventory_image = "morethings_papyrus_iron.png",
 	wield_image = "morethings_papyrus_iron.png",
-	drop = "morethings:iron_shavings",
+	drop = "morethings_items:shavings_iron",
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
@@ -127,7 +130,7 @@ core.register_node("morethings_nature:papyrus_iron", {
 	tiles = {"morethings_papyrus_copper.png"},
 	inventory_image = "morethings_papyrus_copper.png",
 	wield_image = "morethings_papyrus_copper.png",
-	drop = "morethings:copper_shavings",
+	drop = "morethings_items:shavings_copper",
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
@@ -149,7 +152,7 @@ core.register_node("morethings_nature:papyrus_gold", {
 	tiles = {"morethings_papyrus_gold.png"},
 	inventory_image = "morethings_papyrus_gold.png",
 	wield_image = "morethings_papyrus_gold.png",
-	drop = "morethings:gold_shavings",
+	drop = "morethings_items:shavings_gold",
 	paramtype = "light",
 	sunlight_propagates = true,
 	walkable = false,
@@ -194,7 +197,7 @@ core.register_node("morethings_nature:papyrus_diamond", {
 	inventory_image = "morethings_papyrus_diamond.png",
 	wield_image = "morethings_papyrus_diamond.png",
 	paramtype = "light",
-	drop = "morethings:diamond_shard",
+	drop = "morethings_items:shavings_diamond",
 	sunlight_propagates = true,
 	walkable = false,
 	selection_box = {
@@ -211,33 +214,39 @@ core.register_node("morethings_nature:papyrus_diamond", {
 
 -- grow up Config
 
-function default.grow_papyrus9(pos, node)
-	pos.y = pos.y - 1
+
+minetest.register_abm({
+	nodenames = {"morethings_nature:papyrus_dye"},
+	neighbors = {"default:dirt", "default:dirt_with_grass"},
+	interval = 5,
+	chance = 20,
+	action = function(pos, node)
+	pos.y = pos.y-1
 	local name = minetest.get_node(pos).name
-	if name ~= "default:dirt_with_grass" and name ~= "default:dirt" then
+	if name ~= "morethings_nature:papyrus_dye"
+	and name ~= "morethings_nature:papyrus_dye" then
 		return
 	end
 	if not minetest.find_node_near(pos, 3, {"group:water"}) then
 		return
 	end
-	pos.y = pos.y + 1
+	pos.y = pos.y+1
 	local height = 0
-	while node.name == "morethings_nature:papyrus_dye" and height < 6 do
-		height = height + 1
-		pos.y = pos.y + 1
+	while node.name == "morethings_nature:papyrus_dye" and height < 4 do
+		height = height+1
+		pos.y = pos.y+1
 		node = minetest.get_node(pos)
 	end
-	if height == 6 or node.name ~= "air" then
+	if height == 4
+	or node.name ~= "air" then
 		return
 	end
-	if minetest.get_node_light(pos) < 13 then
-		return
-	end
-	minetest.set_node(pos, {name = "morethings_nature:papyrus_dye"})
+	minetest.set_node(pos, {name="morethings_nature:papyrus_dye"})
 	return true
-end
+end,
+})
 
-function default.grow_papyrus8(pos, node)
+function default.grow_papyruspaper(pos, node)
 	pos.y = pos.y - 1
 	local name = minetest.get_node(pos).name
 	if name ~= "default:dirt_with_grass" and name ~= "default:dirt" then
@@ -263,7 +272,7 @@ function default.grow_papyrus8(pos, node)
 	return true
 end
 
-function default.grow_papyrus7(pos, node)
+function default.grow_papyrusstone(pos, node)
 	pos.y = pos.y - 1
 	local name = minetest.get_node(pos).name
 	if name ~= "default:dirt_with_grass" and name ~= "default:dirt" then
@@ -289,7 +298,7 @@ function default.grow_papyrus7(pos, node)
 	return true
 end
 
-function default.grow_papyrus6(pos, node)
+function default.grow_papyruscoal(pos, node)
 	pos.y = pos.y - 1
 	local name = minetest.get_node(pos).name
 	if name ~= "default:dirt_with_grass" and name ~= "default:dirt" then
@@ -315,7 +324,7 @@ function default.grow_papyrus6(pos, node)
 	return true
 end
 
-function default.grow_papyrus5(pos, node)
+function default.grow_papyrusiron(pos, node)
 	pos.y = pos.y - 1
 	local name = minetest.get_node(pos).name
 	if name ~= "default:dirt_with_grass" and name ~= "default:dirt" then
@@ -341,7 +350,7 @@ function default.grow_papyrus5(pos, node)
 	return true
 end
 
-function default.grow_papyrus4(pos, node)
+function default.grow_papyruscopper(pos, node)
 	pos.y = pos.y - 1
 	local name = minetest.get_node(pos).name
 	if name ~= "default:dirt_with_grass" and name ~= "default:dirt" then
@@ -367,7 +376,7 @@ function default.grow_papyrus4(pos, node)
 	return true
 end
 
-function default.grow_papyrus3(pos, node)
+function default.grow_papyrusgold(pos, node)
 	pos.y = pos.y - 1
 	local name = minetest.get_node(pos).name
 	if name ~= "default:dirt_with_grass" and name ~= "default:dirt" then
@@ -393,7 +402,7 @@ function default.grow_papyrus3(pos, node)
 	return true
 end
 
-function default.grow_papyrus2(pos, node)
+function default.grow_papyrusmese(pos, node)
 	pos.y = pos.y - 1
 	local name = minetest.get_node(pos).name
 	if name ~= "default:dirt_with_grass" and name ~= "default:dirt" then
@@ -445,92 +454,7 @@ function default.grow_papyrus(pos, node)
 	return true
 end
 
--- register abm
 
-minetest.register_abm({
-	label = "Grow papyrus",
-	nodenames = {"morethings_nature:papyrus_dye"},
-	neighbors = {"default:dirt", "default:dirt_with_grass"},
-	interval = 14,
-	chance = 20,
-	action = default.grow_papyrus9
-})
-
-minetest.register_abm({
-	label = "Grow papyrus",
-	nodenames = {"morethings_nature:papyrus_paper"},
-	neighbors = {"default:dirt", "default:dirt_with_grass"},
-	interval = 14,
-	chance = 20,
-	action = default.grow_papyrus8
-})
-
-minetest.register_abm({
-	label = "Grow papyrus",
-	nodenames = {"morethings_nature:papyrus_stone"},
-	neighbors = {"default:dirt", "default:dirt_with_grass"},
-	interval = 14,
-	chance = 1,
-	action = default.grow_papyrus7
-})
-
-minetest.register_abm({
-	label = "Grow papyrus",
-	nodenames = {"morethings_nature:papyrus_coal"},
-	neighbors = {"default:dirt", "default:dirt_with_grass"},
-	interval = 14,
-	chance = 1,
-	action = default.grow_papyrus6
-})
-
-minetest.register_abm({
-	label = "Grow papyrus",
-	nodenames = {"morethings_nature:papyrus_iron"},
-	neighbors = {"default:dirt", "default:dirt_with_grass"},
-	interval = 16,
-	chance = 1,
-	action = default.grow_papyrus5
-})
-
-minetest.register_abm({
-	label = "Grow papyrus",
-	nodenames = {"morethings_nature:papyrus_copper"},
-	neighbors = {"default:dirt", "default:dirt_with_grass"},
-	interval = 18,
-	chance = 1,
-	action = default.grow_papyrus4
-})
-
-minetest.register_abm({
-	label = "Grow papyrus",
-	nodenames = {"morethings_nature:papyrus_gold"},
-	neighbors = {"default:dirt", "default:dirt_with_grass"},
-	interval = 20,
-	chance = 1,
-	action = default.grow_papyrus3
-})
-
-minetest.register_abm({
-	label = "Grow papyrus",
-	nodenames = {"morethings_nature:papyrus_mese"},
-	neighbors = {"default:dirt", "default:dirt_with_grass"},
-	interval = 30,
-	chance = 1,
-	action = default.grow_papyrus2
-})
-
-minetest.register_abm({
-	label = "Grow papyrus",
-	nodenames = {"morethings_nature:papyrus_diamond"},
-	neighbors = {"default:dirt", "default:dirt_with_grass"},
-	interval = 32,
-	chance = 1,
-	action = default.grow_papyrus
-})
-
---
--- dig upwards
---
 
 function default.dig_up(pos, node, digger)
 	if digger == nil then return end

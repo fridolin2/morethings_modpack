@@ -34,7 +34,6 @@ minetest.register_node("morethings_crystals:rock_crystal", {
 	paramtype2 = "facedir",
 	drawtype = "mesh",
 	groups = {cracky = 1},
-	drop = "morethings:white_crystal",
 	use_texture_alpha = true,
 	sounds = default.node_sound_glass_defaults(),
 	selection_box = {
@@ -54,7 +53,6 @@ minetest.register_node("morethings_crystals:rock_crystal_magical", {
 	paramtype2 = "facedir",
 	drawtype = "mesh",
 	groups = {cracky = 1},
-	drop = "morethings:rock_crystal_magical",
 	use_texture_alpha = true,
 	sounds = default.node_sound_glass_defaults(),
 	selection_box = {
@@ -74,7 +72,6 @@ minetest.register_node("morethings_crystals:amethyst_magical", {
 	paramtype2 = "facedir",
 	drawtype = "mesh",
 	groups = {cracky = 1},
-	drop = "morethings:amethyst_blinky",
 	use_texture_alpha = true,
 	sounds = default.node_sound_glass_defaults(),
 	selection_box = {
@@ -91,7 +88,6 @@ minetest.register_node("morethings_crystals:amethyst", {
 	paramtype2 = "facedir",
 	drawtype = "mesh",
 	groups = {cracky = 1},
-	drop = "morethings:amethyst",
 	use_texture_alpha = true,
 	sounds = default.node_sound_glass_defaults(),
 	selection_box = {
@@ -108,7 +104,6 @@ minetest.register_node("morethings_crystals:topas", {
 	paramtype2 = "facedir",
 	drawtype = "mesh",
 	groups = {cracky = 1},
-	drop = "morethings:topas",
 	use_texture_alpha = true,
 	sounds = default.node_sound_glass_defaults(),
 	selection_box = {
@@ -125,7 +120,6 @@ minetest.register_node("morethings_crystals:fluorit", {
 	paramtype2 = "facedir",
 	drawtype = "mesh",
 	groups = {cracky = 1},
-	drop = "morethings:fluorit",
 	use_texture_alpha = true,
 	sounds = default.node_sound_glass_defaults(),
 	selection_box = {
@@ -141,7 +135,6 @@ minetest.register_node("morethings_crystals:red_crystal_empowered", {
 	paramtype = "light",
 	drawtype = "mesh",
 	groups = {cracky = 1},
-	drop = "morethings:red_crystal3",
 	use_texture_alpha = true,
 	sounds = default.node_sound_glass_defaults(),
 	light_source = 10,
@@ -151,19 +144,25 @@ minetest.register_node("morethings_crystals:red_crystal_empowered", {
 	},
 })
 
-minetest.register_node("morethings_crystals:red_crystal4", {
-	description = "Red Crystal Empowered2",
-	mesh = "red_crystal_empowered.obj",
-	tiles = {"red_crystal_empowered2.png"},
-	paramtype = "light",
-	drawtype = "mesh",
-	groups = {cracky = 1},
-	drop = "morethings:red_crystal4",
-	use_texture_alpha = true,
-	sounds = default.node_sound_glass_defaults(),
-	light_source = 10,
-	selection_box = {
-		type = "fixed",
-		fixed = {-0.3, -0.5, -0.3, 0.3, 0.35, 0.3}
-	},
+
+
+minetest.register_craft({
+	output = "morethings_crystals:red_crystal_empowered",
+	recipe = {
+		{"morethings_items:ingot_obsidian", "morethings_items:ingot_obsidian", "morethings_items:ingot_obsidian"},
+		{"morethings_items:ingot_obsidian", "morethings_crystals:red_crystal", "morethings_items:ingot_obsidian"},
+		{"morethings_items:ingot_obsidian", "morethings_items:ingot_obsidian", "morethings_items:ingot_obsidian"}
+	}
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_crystals:red_crystal_empowered" 9',
+	recipe = {"morethings_nodes:red_block2empowered"},
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_crystals:red_crystal" 9',
+	recipe = {"morethings_nodes:red_block2"},
 })
