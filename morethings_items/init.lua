@@ -137,6 +137,11 @@ minetest.register_craftitem("morethings_items:golden_rod", {
 	inventory_image = "morethings_golden_rod.png",
 })
 
+minetest.register_craftitem("morethings_items:diamond_rod", {
+	description = "Diamond Rod",
+	inventory_image = "morethings_diamond_rod.png",
+})
+
 minetest.register_craftitem("morethings_items:ingot_krypton_base", {
 	description = "Krypton Ingot Base",
 	inventory_image = "morethings_krypton_ingot_base.png",
@@ -282,6 +287,15 @@ minetest.register_craft({
 		{"morethings_items:shavings_gold", "morethings_items:shavings_gold", "morethings_items:shavings_gold"},
 		{"morethings_items:shavings_gold", "default:stick", "morethings_items:shavings_gold"},
 		{"morethings_items:shavings_gold", "morethings_items:shavings_gold", "morethings_items:shavings_gold"}
+	}
+})
+
+minetest.register_craft({
+	output = "morethings_items:diamond_rod",
+	recipe = {
+		{"morethings_items:shavings_diamond", "morethings_items:shavings_diamond", "morethings_items:shavings_diamond"},
+		{"morethings_items:shavings_diamond", "morethings_items:golden_rod", "morethings_items:shavings_diamond"},
+		{"morethings_items:shavings_diamond", "morethings_items:shavings_diamond", "morethings_items:shavings_diamond"}
 	}
 })
 

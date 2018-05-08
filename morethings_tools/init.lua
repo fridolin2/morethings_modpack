@@ -115,6 +115,15 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = "morethings_tools:silk_touch_pickaxe2",
+	recipe = {
+		{"morethings_nodes:resource_block_silk_touch", "morethings_nodes:resource_block_silk_touch", "morethings_nodes:resource_block_silk_touch"},
+		{"", "morethings_items:diamond_rod", ""},
+		{"", "morethings_items:diamond_rod", ""}
+	}
+})
+
+minetest.register_craft({
 	output = "morethings_tools:mushroom_pickaxe_red",
 	recipe = {
 		{"flowers:mushroom_red", "flowers:mushroom_red", "flowers:mushroom_red"},
@@ -250,6 +259,24 @@ minetest.register_craft({
 	}
 })
 
+minetest.register_craft({
+	output = "morethings_tools:silk_touch_axe2",
+	recipe = {
+		{"morethings_nodes:resource_block_silk_touch", "morethings_nodes:resource_block_silk_touch", ""},
+		{"morethings_nodes:resource_block_silk_touch", "morethings_items:diamond_rod", ""},
+		{"", "morethings_items:diamond_rod", ""}
+	}
+})
+
+minetest.register_craft({
+	output = "morethings_tools:silk_touch_axe2",
+	recipe = {
+		{"", "morethings_nodes:resource_block_silk_touch", "morethings_nodes:resource_block_silk_touch"},
+		{"", "morethings_items:diamond_rod", "morethings_nodes:resource_block_silk_touch"},
+		{"", "morethings_items:diamond_rod", ""}
+	}
+})
+
 
 --Register Shovels
 
@@ -334,6 +361,15 @@ minetest.register_craft({
 	}
 })
 
+minetest.register_craft({
+	output = "morethings_tools:silk_touch_shovel2",
+	recipe = {
+		{"", "morethings_nodes:resource_block_silk_touch", ""},
+		{"", "morethings_items:diamond_rod", ""},
+		{"", "morethings_items:diamond_rod", ""}
+	}
+})
+
 
 --Register Swords
 minetest.register_tool("morethings_tools:red_sword", {
@@ -388,6 +424,19 @@ minetest.register_tool("morethings_tools:silk_touch_sword", {
 	}
 })
 
+minetest.register_tool("morethings_tools:silk_touch_sword2", {
+	description = "Silk Touch Sword",
+	inventory_image = "morethings_silk_touch_sword2.png",
+	tool_capabilities = {
+		full_punch_interval = 0.45,
+		max_drop_level=3,
+		groupcaps={
+			snappy={times={[1]=0.5, [2]=0.75, [3]=2}, uses=2000000, maxlevel=3},
+		},
+		damage_groups = {fleshy=22},
+	}
+})
+
 
 --Define Swords crafting recipes
 minetest.register_craft({
@@ -426,6 +475,15 @@ minetest.register_craft({
 	}
 })
 
+minetest.register_craft({
+	output = "morethings_tools:silk_touch_sword2",
+	recipe = {
+		{"", "morethings_nodes:resource_block_silk_touch", ""},
+		{"", "morethings_nodes:resource_block_silk_touch", ""},
+		{"", "morethings_items:diamond_rod", ""}
+	}
+})
+
 ---Silk Touch Shovel
 
 minetest.register_tool("morethings_tools:silk_touch_shovel", {
@@ -438,6 +496,19 @@ minetest.register_tool("morethings_tools:silk_touch_shovel", {
 			crumbly = {times={[1]=1, [2]=1.25, [3]=2}, uses=150000, maxlevel=3},
 		},
 		damage_groups = {fleshy=4},
+	},
+})
+
+minetest.register_tool("morethings_tools:silk_touch_shovel2", {
+	description = "Silk Touch Shovel",
+	inventory_image = "morethings_silk_touch_shovel2.png",
+	tool_capabilities = {
+		full_punch_interval = 0.5,
+		max_drop_level=3,
+		groupcaps={
+			crumbly = {times={[1]=0.5, [2]=0.75, [3]=1}, uses=150000, maxlevel=3},
+		},
+		damage_groups = {fleshy=6},
 	},
 })
 
@@ -454,6 +525,19 @@ minetest.register_tool("morethings_tools:silk_touch_pickaxe", {
 	},
 })
 
+minetest.register_tool("morethings_tools:silk_touch_pickaxe2", {
+	description = "Silk Touch Pickaxe",
+	inventory_image = "morethings_silk_touch_pickaxe2.png",
+	tool_capabilities = {
+		full_punch_interval = 0.2,
+		max_drop_level=3,
+		groupcaps={
+			cracky = {times={[1]=0.5, [2]=0.75, [3]=1}, uses=200000, maxlevel=3},
+		},
+		damage_groups = {fleshy=10},
+	},
+})
+
 minetest.register_tool("morethings_tools:silk_touch_axe", {
 	description = "Silk Touch Axe",
 	inventory_image = "morethings_silk_touch_axe.png",
@@ -465,6 +549,20 @@ minetest.register_tool("morethings_tools:silk_touch_axe", {
 			choppy={times={[1]=1.0, [2]=1.25, [3]=2, [4]=2.25}, uses=150000, maxlevel=4},
 		},
 		damage_groups = {fleshy=18},
+	}
+})
+
+minetest.register_tool("morethings_tools:silk_touch_axe2", {
+	description = "Silk Touch Axe",
+	inventory_image = "morethings_silk_touch_axe2.png",
+	tool_capabilities = {
+		full_punch_interval = 0.4,
+		wield_scale = {x = 3, y = 3, z = 3},
+		max_drop_level=3,
+		groupcaps={
+			choppy={times={[1]=0.5, [2]=0.75, [3]=1, [4]=1.125}, uses=150000, maxlevel=4},
+		},
+		damage_groups = {fleshy=20},
 	}
 })
 
@@ -485,6 +583,35 @@ minetest.register_on_dignode(function(_, oldnode, digger)
 end)
 
 add_tool("morethings_tools:silk_touch_shovel", function(digger, oldnode)
+	local inv = digger:get_inventory()
+	if inv then
+		local free_slots = 0
+		for _,i in pairs(inv:get_list("main")) do
+			if i:get_count() == 0 then
+				free_slots = free_slots+1
+				break
+			end
+		end
+		if free_slots == 0 then
+			return
+		end
+		local nd = oldnode.name
+		local items = minetest.get_node_drops(nd)
+		local first_item = items[1]
+		if not first_item then
+			return
+		end
+		if first_item == nd then
+			return
+		end
+		for _,item in ipairs(items) do
+			inv:remove_item("main", item)
+		end
+		inv:add_item("main", nd)
+	end
+end)
+
+add_tool("morethings_tools:silk_touch_shovel2", function(digger, oldnode)
 	local inv = digger:get_inventory()
 	if inv then
 		local free_slots = 0
@@ -542,7 +669,65 @@ add_tool("morethings_tools:silk_touch_axe", function(digger, oldnode)
 	end
 end)
 
+add_tool("morethings_tools:silk_touch_axe2", function(digger, oldnode)
+	local inv = digger:get_inventory()
+	if inv then
+		local free_slots = 0
+		for _,i in pairs(inv:get_list("main")) do
+			if i:get_count() == 0 then
+				free_slots = free_slots+1
+				break
+			end
+		end
+		if free_slots == 0 then
+			return
+		end
+		local nd = oldnode.name
+		local items = minetest.get_node_drops(nd)
+		local first_item = items[1]
+		if not first_item then
+			return
+		end
+		if first_item == nd then
+			return
+		end
+		for _,item in ipairs(items) do
+			inv:remove_item("main", item)
+		end
+		inv:add_item("main", nd)
+	end
+end)
+
 add_tool("morethings_tools:silk_touch_pickaxe", function(digger, oldnode)
+	local inv = digger:get_inventory()
+	if inv then
+		local free_slots = 0
+		for _,i in pairs(inv:get_list("main")) do
+			if i:get_count() == 0 then
+				free_slots = free_slots+1
+				break
+			end
+		end
+		if free_slots == 0 then
+			return
+		end
+		local nd = oldnode.name
+		local items = minetest.get_node_drops(nd)
+		local first_item = items[1]
+		if not first_item then
+			return
+		end
+		if first_item == nd then
+			return
+		end
+		for _,item in ipairs(items) do
+			inv:remove_item("main", item)
+		end
+		inv:add_item("main", nd)
+	end
+end)
+
+add_tool("morethings_tools:silk_touch_pickaxe2", function(digger, oldnode)
 	local inv = digger:get_inventory()
 	if inv then
 		local free_slots = 0
@@ -599,3 +784,35 @@ add_tool("morethings_tools:silk_touch_sword", function(digger, oldnode)
 		inv:add_item("main", nd)
 	end
 end)
+
+
+add_tool("morethings_tools:silk_touch_sword2", function(digger, oldnode)
+	local inv = digger:get_inventory()
+	if inv then
+		local free_slots = 0
+		for _,i in pairs(inv:get_list("main")) do
+			if i:get_count() == 0 then
+				free_slots = free_slots+1
+				break
+			end
+		end
+		if free_slots == 0 then
+			return
+		end
+		local nd = oldnode.name
+		local items = minetest.get_node_drops(nd)
+		local first_item = items[1]
+		if not first_item then
+			return
+		end
+		if first_item == nd then
+			return
+		end
+		for _,item in ipairs(items) do
+			inv:remove_item("main", item)
+		end
+		inv:add_item("main", nd)
+	end
+end)
+
+
