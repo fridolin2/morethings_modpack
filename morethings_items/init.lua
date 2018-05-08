@@ -327,6 +327,15 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = '"morethings_items:ingot_hermes_gold" 2',
+	recipe = {
+		{"morethings_items:ingot_red", "morethings_items:ingot_mese", "morethings_items:ingot_obsidian"},
+		{"morethings_items:ingot_ghost", "morethings_items:pegasus_feather", "morethings_items:ingot_silk_touch"},
+		{"morethings_items:ingot_coal", "morethings_items:ingot_red_empowered", "morethings_items:ingot_krypton_base"}
+	}
+})
+
+minetest.register_craft({
 	output = '"morethings_items:dust_obsidian" 9',  
 	recipe = {
 		{"", "morethings_items:obsidian_hammer", ""},

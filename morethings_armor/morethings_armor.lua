@@ -377,6 +377,15 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = "morethings_armor:hermes_boots",
+	recipe = {
+		{"morethings_items:ingot_hermes_gold", "", "morethings_items:ingot_hermes_gold"},
+		{"morethings_items:ingot_hermes_gold", "", "morethings_items:ingot_hermes_gold"},
+	},
+})
+
+
+minetest.register_craft({
 	output = "morethings_armor:gem_helmet",
 	recipe = {
 		{"morethings_items:gem_red", "morethings_items:gem_magenta", "morethings_items:gem_red"},
