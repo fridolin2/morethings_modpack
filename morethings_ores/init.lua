@@ -80,6 +80,20 @@ minetest.register_node("morethings_ores:gem_ore", {
 	is_ground_content = true,
 })
 
+minetest.register_node("morethings_ores:bone_ore", {
+	description = "Bone Ore",
+	tiles = {"morethings_bone_ore_block.png"},
+	groups = {cracky=3},
+	sounds = default.node_sound_stone_defaults(),
+	drop = {
+		max_items = 2,
+		items = {
+			{ items = {'morethings_items:bone'}, rarity = 4 },
+		}
+	},
+	is_ground_content = true,
+})
+
 minetest.register_node("morethings_ores:krypton_ore", {
 	description = "Krypton Ore",
 	tiles = {"morethings_krypton_ore_block.png"},
@@ -243,6 +257,25 @@ minetest.register_ore({
 		y_max           = 0,
 		noise_threshold = 0.0,
 		noise_params    = {
+			offset = 0.5,
+			scale = 0.2,
+			spread = {x = 5, y = 5, z = 5},
+			seed = -316,
+			octaves = 1,
+			persist = 0.0
+		},
+	})
+	
+minetest.register_ore({
+	ore_type        = "blob",
+	ore             = "morethings_ores:bone_ore",
+	wherein         = {"default:desert_stone"},
+	clust_scarcity  = 16 * 16 * 16,
+	clust_size      = 5,
+	y_min           = -40,
+	y_max           = 20,
+	noise_threshold = 0.0,
+	noise_params    = {
 			offset = 0.5,
 			scale = 0.2,
 			spread = {x = 5, y = 5, z = 5},

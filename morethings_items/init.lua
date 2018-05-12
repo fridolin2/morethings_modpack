@@ -249,6 +249,11 @@ minetest.register_craftitem("morethings_items:bundle_of_sticks", {
 	inventory_image = "morethings_bundle_of_sticks.png",
 })
 
+minetest.register_craftitem("morethings_items:bone", {
+	description = "Bone",
+	inventory_image = "morethings_bone.png",
+})
+
 minetest.register_craftitem("morethings_items:bronze_lump", {
 	description = "Bronze Lump", 
 	inventory_image = "morethings_bronze_lump.png", 
