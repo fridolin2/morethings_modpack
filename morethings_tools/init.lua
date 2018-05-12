@@ -75,6 +75,19 @@ minetest.register_tool("morethings_tools:mushroom_pickaxe_brown", {
 	},
 })
 
+minetest.register_tool("morethings_tools:desert_stone_pickaxe", {
+	description = "Desert Stone Pickaxe",
+	inventory_image = "morethings_desert_stone_pickaxe.png",
+	tool_capabilities = {
+		full_punch_interval = 1.3,
+		max_drop_level=0,
+		groupcaps={
+			cracky = {times={[2]=2.0, [3]=1.0, }, uses=200, maxlevel=3},
+		},
+		damage_groups = {fleshy=2},
+	},
+})
+
 --Define Pickaxes crafting recipes
 
 minetest.register_craft({
@@ -321,6 +334,21 @@ minetest.register_tool("morethings_tools:krypton_shovel", {
 		damage_groups = {fleshy=14},
 	},
 })
+
+minetest.register_tool("morethings_tools:desert_stone_shovel", {
+	description = "Desert Stone Shovel",
+	inventory_image = "morethings_desert_stone_shovel.png",
+	wield_image = "morethings_desert_stone_shovel.png^[transformR90",
+	tool_capabilities = {
+		full_punch_interval = 1.0,
+		max_drop_level=3,
+		groupcaps={
+			crumbly = {times={[1]=2, [2]=2.25, [3]=3}, uses=150, maxlevel=3},
+		},
+		damage_groups = {fleshy=2},
+	},
+})
+
 
 
 --Define Shovels Crafting Recipes
