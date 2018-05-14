@@ -269,7 +269,7 @@ minetest.register_ore({
 minetest.register_ore({
 	ore_type        = "blob",
 	ore             = "morethings_ores:bone_ore",
-	wherein         = {"default:desert_stone"},
+	wherein         = {"default:desert_sand"},
 	clust_scarcity  = 16 * 16 * 16,
 	clust_size      = 5,
 	y_min           = -40,
