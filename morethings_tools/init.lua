@@ -374,7 +374,7 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "morethings_tools:desert_stone_shovel",
 	recipe = {
-		{"default:desert_stone", "default:desert_stone", "default:desert_stone"},
+		{"", "default:desert_stone", ""},
 		{"", "morethings_items:bone", ""},
 		{"", "morethings_items:bone", ""}
 	}
