@@ -109,6 +109,15 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = "morethings_tools:desert_stone_pickaxe",
+	recipe = {
+		{"default:desert_stone", "default:desert_stone", "default:desert_stone"},
+		{"", "morethings_items:bone", ""},
+		{"", "morethings_items:bone", ""}
+	}
+})
+
+minetest.register_craft({
 	output = "morethings_tools:ghost_pickaxe",
 	recipe = {
 		{"morethings:ghost_ingot", "morethings:ghost_ingot", "morethings:ghost_ingot"},
@@ -359,6 +368,15 @@ minetest.register_craft({
 		{"", "morethings:red_crystal", ""},
 		{"", "default:stick", ""},
 		{"", "default:stick", ""}
+	}
+})
+
+minetest.register_craft({
+	output = "morethings_tools:desert_stone_shovel",
+	recipe = {
+		{"default:desert_stone", "default:desert_stone", "default:desert_stone"},
+		{"", "morethings_items:bone", ""},
+		{"", "morethings_items:bone", ""}
 	}
 })
 
