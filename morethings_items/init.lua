@@ -29,6 +29,16 @@ minetest.register_craftitem("morethings_items:ingot_coal", {
 	inventory_image = "morethings_coal_ingot.png",
 })
 
+minetest.register_craftitem("morethings_items:ingot_glass", {
+	description = "Glass Ingot",
+	inventory_image = "morethings_glass_ingot.png",
+})
+
+minetest.register_craftitem("morethings_items:ingot_glow", {
+	description = "Glow Ingot",
+	inventory_image = "morethings_glow_ingot.png",
+})
+
 minetest.register_craftitem("morethings_items:ingot_silk_touch", {
 	description = "Silk Touch Ingot",
 	inventory_image = "morethings_silk_touch_ingot.png",
@@ -257,6 +267,11 @@ minetest.register_craftitem("morethings_items:bone", {
 minetest.register_craftitem("morethings_items:bronze_lump", {
 	description = "Bronze Lump", 
 	inventory_image = "morethings_bronze_lump.png", 
+})
+
+minetest.register_craftitem("morethings_items:glow_lump", {
+	description = "Glow Lump", 
+	inventory_image = "morethings_glow_lump.png", 
 })
 
 --Define Craftitems Craft Recipes

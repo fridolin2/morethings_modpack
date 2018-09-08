@@ -190,4 +190,88 @@ function fire.update_sounds_around(pos)
 end
 
 --Define other non Cubes 
+--Define other Cubes
 
+minetest.register_node("morethings_special_nodes:clock_bottom_left", {
+	description = "Clock Bottom Left",
+		
+	tiles = {
+		"default_cobble.png",
+		"default_cobble.png",
+		"default_cobble.png",
+		"default_cobble.png",
+		"default_cobble.png",
+		"default_cobble.png^morethings_clock_bottom_left_overlay.png", 
+},
+	is_ground_content = true,
+	sounds = default.node_sound_stone_defaults(),
+	groups = {cracky=3, oddly_breakable_by_hand = 1},
+	paramtype2 = "facedir",
+	sunlight_propagates = true,
+	walkable = true,
+	buildable_to = false,
+	paramtype = "light"
+})
+
+minetest.register_node("morethings_special_nodes:clock_bottom_right", {
+	description = "Clock Bottom Right",
+		
+	tiles = {
+		"default_cobble.png",
+		"default_cobble.png",
+		"default_cobble.png",
+		"default_cobble.png",
+		"default_cobble.png",
+		"default_cobble.png^morethings_clock_bottom_right_overlay.png", 
+},
+	is_ground_content = true,
+	sounds = default.node_sound_stone_defaults(),
+	groups = {cracky=3, oddly_breakable_by_hand = 1},
+	paramtype2 = "facedir",
+	sunlight_propagates = true,
+	walkable = true,
+	buildable_to = false,
+	paramtype = "light"
+})
+
+minetest.register_node("morethings_special_nodes:clock_top_left", {
+	description = "Clock Bottom Left",
+		
+	tiles = {
+		"default_cobble.png",
+		"default_cobble.png",
+		"default_cobble.png",
+		"default_cobble.png",
+		"default_cobble.png",
+		"default_cobble.png^morethings_clock_top_left_overlay.png", 
+},
+	is_ground_content = true,
+	sounds = default.node_sound_stone_defaults(),
+	groups = {cracky=3, oddly_breakable_by_hand = 1},
+	paramtype2 = "facedir",
+	sunlight_propagates = true,
+	walkable = true,
+	buildable_to = false,
+	paramtype = "light"
+})
+
+minetest.register_node("morethings_special_nodes:clock_top_right", {
+	description = "Clock Bottom Right",
+		
+	tiles = {
+		"default_cobble.png",
+		"default_cobble.png",
+		"default_cobble.png",
+		"default_cobble.png",
+		"default_cobble.png",
+		"default_cobble.png^morethings_clock_top_right_overlay.png", 
+},
+	is_ground_content = true,
+	sounds = default.node_sound_stone_defaults(),
+	groups = {cracky=3, oddly_breakable_by_hand = 1},
+	paramtype2 = "facedir",
+	sunlight_propagates = true,
+	walkable = true,
+	buildable_to = false,
+	paramtype = "light"
+})

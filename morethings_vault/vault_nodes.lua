@@ -180,6 +180,21 @@ minetest.register_node("morethings_vault:block_blue", {
 	sounds = default.node_sound_stone_defaults()
 })
 
+minetest.register_node("morethings_vault:block_gray", {
+	description = "Gray Vault Block",
+	drawtype = "glasslike_framed",
+
+	tiles = {"morethings_vault_block_gray.png", "morethings_vault_block_gray_full.png"},
+	inventory_image = minetest.inventorycube("morethings_vault_block_gray.png"),
+
+	paramtype = "light",
+	sunlight_propagates = true,
+	is_ground_content = true,
+
+	groups = {cracky = 3, },
+	sounds = default.node_sound_stone_defaults()
+})
+
 minetest.register_node("morethings_vault:block_white", {
 	description = "White Vault Block",
 	drawtype = "glasslike_framed",
@@ -237,6 +252,31 @@ minetest.register_node("morethings_vault:block_yellow", {
 		paramtype = "light"
 })
 
+minetest.register_node("morethings_vault:console_gray", {
+		description = "Console (Gray)",
+		
+		tiles = {
+		"morethings_vault_block_gray.png",
+		"morethings_vault_block_gray.png",
+		"morethings_vault_block_gray.png",
+		"morethings_vault_block_gray.png",
+		"morethings_vault_console_gray_back.png",
+		{name="morethings_vault_console_gray_front.png", animation={type="vertical_frames",
+		aspect_w=16, aspect_h=16, length=3}},
+		},
+		
+		is_ground_content = true,
+		sounds = default.node_sound_stone_defaults(),
+		groups = {cracky = 3},
+		drop = "morethings_vault:console_gray",
+		paramtype2 = "facedir",
+		sunlight_propagates = true,
+		walkable = true,
+		buildable_to = false,
+		inventory_image = {"morethings_vault_console.png"},
+		paramtype = "light"
+})
+
 minetest.register_node("morethings_vault:console_blue", {
 		description = "Console (Blue)",
 
@@ -285,6 +325,23 @@ minetest.register_node("morethings_vault:console_yellow", {
 		paramtype = "light"
 })
 ---Register Fan´s----------------------------------------------------------------------------------------------------------------
+
+minetest.register_node("morethings_vault:fan_gray", {
+	description = "Gray Fan",
+	tiles = {
+		{name="morethings_vault_fan_gray.png", animation={type="vertical_frames",
+		aspect_w=16, aspect_h=16, length=1}},
+	},
+	is_ground_content = true,
+	sounds = default.node_sound_stone_defaults(),
+	groups = {cracky = 3},
+	drop = "morethings_vault:fan_gray",
+	sunlight_propagates = true,
+	walkable = true,
+	buildable_to = false,
+	inventory_image = {"morethings_vault_fan_gray_block.png"},
+	paramtype = "light"
+})
 
 minetest.register_node("morethings_vault:fan_yellow", {
 	description = "Yellow Fan",

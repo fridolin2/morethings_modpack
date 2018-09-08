@@ -8,6 +8,7 @@ minetest.register_alias("morethings:ghost_ore", "morethings_ores:ghost_ore")
 minetest.register_node("morethings_ores:red_ore", {
 	description = "Red Ore",
 	tiles = {"morethings_red_ore_block.png"},
+	stack_max = 10,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 	drop = "morethings_items:red_crystal_shards",
@@ -17,15 +18,41 @@ minetest.register_node("morethings_ores:red_ore", {
 minetest.register_node("morethings_ores:chalk_ore", {
 	description = "Chalk Ore",
 	tiles = {"morethings_chalk_ore_block.png"},
+	stack_max = 10,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 	drop = "morethings_items:dust_chalk",
 	is_ground_content = true,
 })
 
+minetest.register_node("morethings_ores:diamond_infused_cobble", {
+	description = "Diamond Infused Cobble",
+	tiles = {"morethings_diamond_infused_cobble.png"},
+	stack_max = 10,
+	groups = {cracky=3},
+	sounds = default.node_sound_stone_defaults(),
+	drop = '"morethings_items:shavings_diamond" 3',
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_ores:glow_ore", {
+	description = "Glow Ore",
+	tiles = {
+		{name="morethings_glow_ore_block_flow.png", animation={type="vertical_frames",
+		aspect_w=16, aspect_h=16, length=3}},
+	},
+	stack_max = 10,
+	inventory_image = core.inventorycube("morethings_glow_ore_block.png"),
+	groups = {cracky=3},
+	sounds = default.node_sound_stone_defaults(),
+	drop = "morethings_items:glow_lump",
+	is_ground_content = true,
+})
+
 minetest.register_node("morethings_ores:cloud", {
 	description = "Cloud Ore",
 	tiles = {"morethings_cloud_ore_block.png"},
+	stack_max = 10,
 	groups = {snappy=3},
 	sounds = default.node_sound_dirt_defaults(),
 	drop = "morethings_items:pegasus_feather",
@@ -40,6 +67,7 @@ minetest.register_node("morethings_ores:cloud", {
 minetest.register_node("morethings_ores:flint_ore", {
 	description = "Flint Ore",
 	tiles = {"morethings_flint_ore_block.png"},
+	stack_max = 10,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 	drop = "default:flint",
@@ -49,6 +77,7 @@ minetest.register_node("morethings_ores:flint_ore", {
 minetest.register_node("morethings_ores:bronze_ore", {
 	description = "Bronze Ore",
 	tiles = {"morethings_bronze_ore_block.png"},
+	stack_max = 10,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 	drop = "morethings_items:bronze_lump",
@@ -58,6 +87,7 @@ minetest.register_node("morethings_ores:bronze_ore", {
 minetest.register_node("morethings_ores:gem_ore", {
 	description = "Gem Ore",
 	tiles = {"morethings_gem_ore_block.png"},
+	stack_max = 10,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 	drop = {
@@ -83,6 +113,7 @@ minetest.register_node("morethings_ores:gem_ore", {
 minetest.register_node("morethings_ores:bone_ore", {
 	description = "Bone Ore",
 	tiles = {"morethings_bone_ore_block.png"},
+	stack_max = 10,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 	drop = {
@@ -97,6 +128,7 @@ minetest.register_node("morethings_ores:bone_ore", {
 minetest.register_node("morethings_ores:krypton_ore", {
 	description = "Krypton Ore",
 	tiles = {"morethings_krypton_ore_block.png"},
+	stack_max = 5,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 	drop = "morethings_items:lump_krypton",
@@ -106,6 +138,7 @@ minetest.register_node("morethings_ores:krypton_ore", {
 minetest.register_node("morethings_ores:ghost_ore", {
 	description = "Ghost Ore",
 	tiles = {"morethings_ghost_ore_block.png"},
+	stack_max = 10,
 	light_source = default.LIGHT_MAX - 14,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
@@ -116,6 +149,7 @@ minetest.register_node("morethings_ores:ghost_ore", {
 minetest.register_node("morethings_ores:salt_ore", {
 	description = "Salt Ore",
 	tiles = {"morethings_salt_ore_block.png"},
+	stack_max = 10,
 	light_source = default.LIGHT_MAX - 14,
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
@@ -305,6 +339,17 @@ minetest.register_ore({
 	clust_size = 2,
 	y_min = -31000,
 	y_max = 50,
+})
+
+minetest.register_ore({
+	ore_type = "scatter",
+	ore = "morethings_ores:diamond_infused_cobble",
+	wherein = "default:stone",
+	clust_scarcity = 17*17*17,
+	clust_num_ores = 4,
+	clust_size = 4,
+	y_min = -31000,
+	y_max = -40,
 })
 
 minetest.register_ore({

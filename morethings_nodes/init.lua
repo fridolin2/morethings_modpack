@@ -38,12 +38,23 @@ dofile(minetest.get_modpath("morethings_nodes").."/tiles_crafting.lua")
 dofile(minetest.get_modpath("morethings_nodes").."/morethings_pathblocks.lua")
 dofile(minetest.get_modpath("morethings_nodes").."/compressed_blocks.lua")
 dofile(minetest.get_modpath("morethings_nodes").."/chalk_blocks.lua")
-
+dofile(minetest.get_modpath("morethings_nodes").."/morethings_concrete.lua")
+  
 
 
 ------------------
 ---Define Boxes---
 ------------------
+
+
+minetest.register_node("morethings_nodes:soil_wet", {
+	description = "Wet Soil",
+	tiles = {"default_dirt.png^farming_soil_wet.png", "default_dirt.png^farming_soil_wet_side.png"},
+	drop = "default:dirt",
+	groups = {crumbly=3, not_in_creative_inventory=0, soil=0, wet = 0, grassland = 0, field =0},
+	sounds = default.node_sound_dirt_default, 
+})
+
 minetest.register_node("morethings_nodes:box", {
 	description = "Box",
 		
@@ -55,6 +66,7 @@ minetest.register_node("morethings_nodes:box", {
 		"morethings_box_side.png",
 		"morethings_box_front.png", 
 },
+
 	is_ground_content = true,
 	sounds = default.node_sound_wood_defaults(),
 	groups = {choppy=3, oddly_breakable_by_hand = 1, flammable = 2},
@@ -170,8 +182,120 @@ minetest.register_node("morethings_nodes:box_wheat_seed", {
 	paramtype = "light"
 })
 -------------------------
+---Define no Gravity Blocks---
+-------------------------
+minetest.register_node("morethings_nodes:building_no_gravitiy_sand", {
+	description = "No Gravity Sand",
+	tiles = {"default_sand.png"},
+	groups = {crumbly = 2, sand = 1},
+	sounds = default.node_sound_sand_defaults(),
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_nodes:building_no_gravitiy_gravel", {
+	description = "No Gravity Gravel",
+	tiles = {"default_gravel.png"},
+	groups = {crumbly = 2, gravel = 1},
+	sounds = default.node_sound_gravel_defaults(),
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_nodes:building_no_gravitiy_gravel_old", {
+	description = "No Gravity Gravel (Old)",
+	tiles = {"morethings_gravel_old.png"},
+	groups = {crumbly = 2, gravel = 1},
+	sounds = default.node_sound_gravel_defaults(),
+	is_ground_content = true,
+})
+
+-------------------------
 ---Define other Blocks---
 -------------------------
+
+minetest.register_node("morethings_nodes:desert_stone_with_moss", {
+	description = "Desert Stone with Moss",
+	tiles = {"default_desert_stone.png^morethings_moss_top.png",
+		{name = "default_desert_stone.png^morethings_moss_side.png",
+			tileable_vertical = false}},
+	groups = {cracky = 3, soil = 1, spreading_dirt_type = 1},
+	drop = "default:desert_stone",
+	sounds = default.node_sound_stone_defaults({
+		footstep = {name = "default_grass_footstep", gain = 0.25},
+	}),
+})
+
+minetest.register_node("morethings_nodes:stone_with_grass", {
+	description = "Stone with Grass",
+	tiles = {"default_grass.png", "default_stone.png",
+		{name = "default_stone.png^default_grass_side.png",
+			tileable_vertical = false}},
+	groups = {cracky = 3, soil = 1, spreading_dirt_type = 1},
+	drop = "default:stone",
+	sounds = default.node_sound_stone_defaults({
+		footstep = {name = "default_grass_footstep", gain = 0.25},
+	}),
+})
+
+minetest.register_node("morethings_nodes:cobble_with_grass", {
+	description = "Cobble with Grass",
+	tiles = {"default_grass.png", "default_cobble.png",
+		{name = "default_cobble.png^default_grass_side.png",
+			tileable_vertical = false}},
+	groups = {cracky = 3, soil = 1, spreading_dirt_type = 1},
+	drop = "default:cobble",
+	sounds = default.node_sound_stone_defaults({
+		footstep = {name = "default_grass_footstep", gain = 0.25},
+	}),
+})
+
+minetest.register_node("morethings_nodes:desert_cobble_with_grass", {
+	description = "Desert Cobble with Grass",
+	tiles = {"default_grass.png", "default_desert_cobble.png",
+		{name = "default_desert_cobble.png^default_grass_side.png",
+			tileable_vertical = false}},
+	groups = {cracky = 3, soil = 1, spreading_dirt_type = 1},
+	drop = "default:desert_cobble",
+	sounds = default.node_sound_stone_defaults({
+		footstep = {name = "default_grass_footstep", gain = 0.25},
+	}),
+})
+
+minetest.register_node("morethings_nodes:desert_stone_with_grass", {
+	description = "Desert Stone with Grass",
+	tiles = {"default_grass.png", "default_desert_stone.png",
+		{name = "default_desert_stone.png^default_grass_side.png",
+			tileable_vertical = false}},
+	groups = {cracky = 3, soil = 1, spreading_dirt_type = 1},
+	drop = "default:desert_stone",
+	sounds = default.node_sound_stone_defaults({
+		footstep = {name = "default_grass_footstep", gain = 0.25},
+	}),
+})
+
+minetest.register_node("morethings_nodes:coal_stone_with_grass", {
+	description = "Coal Stone with Grass",
+	tiles = {"default_grass.png", "moreblocks_coal_stone.png",
+		{name = "moreblocks_coal_stone.png^default_grass_side.png",
+			tileable_vertical = false}},
+	groups = {cracky = 3, soil = 1, spreading_dirt_type = 1},
+	drop = "moreblocks:coal_stone",
+	sounds = default.node_sound_stone_defaults({
+		footstep = {name = "default_grass_footstep", gain = 0.25},
+	}),
+})
+
+minetest.register_node("morethings_nodes:iron_stone_with_grass", {
+	description = "Iron Stone with Grass",
+	tiles = {"default_grass.png", "moreblocks_iron_stone.png",
+		{name = "moreblocks_iron_stone.png^default_grass_side.png",
+			tileable_vertical = false}},
+	groups = {cracky = 3, soil = 1, spreading_dirt_type = 1},
+	drop = "moreblocks:iron_stone",
+	sounds = default.node_sound_stone_defaults({
+		footstep = {name = "default_grass_footstep", gain = 0.25},
+	}),
+})
+
 minetest.register_node("morethings_nodes:building_random_block", {
 	description = "Random Block",
 	tiles = {"morethings_random_block.png"},
@@ -181,21 +305,11 @@ minetest.register_node("morethings_nodes:building_random_block", {
 	is_ground_content = true,
 })
 
-minetest.register_node("morethings_nodes:building_concrete", {
-	description = "Concrete",
-	tiles = {"morethings_concrete.png"},
-	paramtype2 = "facedir",
+minetest.register_node("morethings_nodes:building_concrete_old", {
+	description = "Concrete Old",
+	tiles = {"morethings_concrete_old.png"},
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
-	is_ground_content = true,
-})
-
-minetest.register_node("morethings_nodes:building_concrete_powder", {
-	description = "Concrete Powder",
-	tiles = {"morethings_concrete_powder.png"},
-	paramtype2 = "facedir",
-	groups = {crumbly = 2, falling_node = 1},
-	sounds = default.node_sound_gravel_defaults(),
 	is_ground_content = true,
 })
 
@@ -222,6 +336,14 @@ minetest.register_node("morethings_nodes:building_refined_obsidian_powder", {
 	tiles = {"morethings_refined_obsidian_powder.png"},
 	paramtype2 = "facedir",
 	groups = {crumbly = 2, falling_node = 1},
+	sounds = default.node_sound_gravel_defaults(),
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_nodes:building_old_gravel", {
+	description = "Gravel (Old)",
+	tiles = {"morethings_gravel_old.png"},
+	groups = {crumbly = 2, falling_node = 1, gravel = 1},
 	sounds = default.node_sound_gravel_defaults(),
 	is_ground_content = true,
 })
@@ -511,6 +633,42 @@ minetest.register_craft({
 		{"morethings_nodes:path_block", "", "morethings_nodes:path_block"},
 		{"morethings_nodes:path_block", "", "morethings_nodes:path_block"}
 	}
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_nodes:stone_with_grass" 3',
+	recipe = {"default:dirt_with_grass", "default:stone"},
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_nodes:coal_stone_with_grass" 3',
+	recipe = {"default:dirt_with_grass", "moreblocks:coal_stone"},
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_nodes:iron_stone_with_grass" 3',
+	recipe = {"default:dirt_with_grass", "moreblocks:iron_stone"},
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_nodes:cobble_with_grass" 3',
+	recipe = {"default:dirt_with_grass", "default:cobble"},
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_nodes:desert_stone_with_grass" 3',
+	recipe = {"default:dirt_with_grass", "default:desert_stone"},
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_nodes:desert_cobble_with_grass" 3',
+	recipe = {"default:dirt_with_grass", "default:desert_cobble"},
 })
 
 minetest.register_craft( {

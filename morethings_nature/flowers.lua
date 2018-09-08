@@ -12,7 +12,7 @@ minetest.register_node("morethings_nature:red_dandelion" , {
 		walkable = false,
 		buildable_to = true,
 		stack_max = 999,
-		groups = {snappy = 3},
+		groups = {snappy = 3, attached_node = 1},
 		sounds = default.node_sound_leaves_defaults(),
 		selection_box = {
 			type = "fixed",
@@ -32,7 +32,7 @@ minetest.register_node("morethings_nature:black_dandelion" , {
 		walkable = false,
 		buildable_to = true,
 		stack_max = 999,
-		groups = {snappy = 3},
+		groups = {snappy = 3, attached_node = 1},
 		sounds = default.node_sound_leaves_defaults(),
 		selection_box = {
 			type = "fixed",
@@ -52,7 +52,7 @@ minetest.register_node("morethings_nature:cyan_dandelion" , {
 		walkable = false,
 		buildable_to = true,
 		stack_max = 999,
-		groups = {snappy = 3},
+		groups = {snappy = 3, attached_node = 1},
 		sounds = default.node_sound_leaves_defaults(),
 		selection_box = {
 			type = "fixed",
@@ -72,7 +72,7 @@ minetest.register_node("morethings_nature:dark_blue_dandelion" , {
 		walkable = false,
 		buildable_to = true,
 		stack_max = 999,
-		groups = {snappy = 3},
+		groups = {snappy = 3, attached_node = 1},
 		sounds = default.node_sound_leaves_defaults(),
 		selection_box = {
 			type = "fixed",
@@ -92,7 +92,7 @@ minetest.register_node("morethings_nature:green_dandelion" , {
 		walkable = false,
 		buildable_to = true,
 		stack_max = 999,
-		groups = {snappy = 3},
+		groups = {snappy = 3, attached_node = 1},
 		sounds = default.node_sound_leaves_defaults(),
 		selection_box = {
 			type = "fixed",
@@ -112,7 +112,7 @@ minetest.register_node("morethings_nature:light_blue_dandelion" , {
 		walkable = false,
 		buildable_to = true,
 		stack_max = 999,
-		groups = {snappy = 3},
+		groups = {snappy = 3, attached_node = 1},
 		sounds = default.node_sound_leaves_defaults(),
 		selection_box = {
 			type = "fixed",
@@ -132,7 +132,7 @@ minetest.register_node("morethings_nature:orange_dandelion" , {
 		walkable = false,
 		buildable_to = true,
 		stack_max = 999,
-		groups = {snappy = 3},
+		groups = {snappy = 3, attached_node = 1},
 		sounds = default.node_sound_leaves_defaults(),
 		selection_box = {
 			type = "fixed",
@@ -152,7 +152,7 @@ minetest.register_node("morethings_nature:pink_dandelion" , {
 		walkable = false,
 		buildable_to = true,
 		stack_max = 999,
-		groups = {snappy = 3},
+		groups = {snappy = 3, attached_node = 1},
 		sounds = default.node_sound_leaves_defaults(),
 		selection_box = {
 			type = "fixed",
@@ -172,7 +172,7 @@ minetest.register_node("morethings_nature:violett_dandelion" , {
 		walkable = false,
 		buildable_to = true,
 		stack_max = 999,
-		groups = {snappy = 3},
+		groups = {snappy = 3, attached_node = 1},
 		sounds = default.node_sound_leaves_defaults(),
 		selection_box = {
 			type = "fixed",
@@ -192,7 +192,7 @@ minetest.register_node("morethings_nature:yellow_dandelion" , {
 		walkable = false,
 		buildable_to = true,
 		stack_max = 999,
-		groups = {snappy = 3},
+		groups = {snappy = 3, attached_node = 1},
 		sounds = default.node_sound_leaves_defaults(),
 		selection_box = {
 			type = "fixed",

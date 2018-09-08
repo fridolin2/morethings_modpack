@@ -18,7 +18,7 @@ minetest.register_node("morethings_nature:vine", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -40,7 +40,7 @@ minetest.register_node("morethings_nature:vine_large", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 })
 
@@ -62,7 +62,7 @@ minetest.register_node("morethings_nature:vine_black", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 
 
@@ -84,7 +84,7 @@ minetest.register_node("morethings_nature:vine_cyan", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 
 
@@ -106,7 +106,7 @@ minetest.register_node("morethings_nature:vine_dark_blue", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 
 
@@ -128,7 +128,7 @@ minetest.register_node("morethings_nature:vine_green", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 
 
@@ -150,7 +150,7 @@ minetest.register_node("morethings_nature:vine_light_blue", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 
 
@@ -172,7 +172,7 @@ minetest.register_node("morethings_nature:vine_orange", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 
 
@@ -194,7 +194,7 @@ minetest.register_node("morethings_nature:vine_pink", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 
 
@@ -216,7 +216,7 @@ minetest.register_node("morethings_nature:vine_red", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 
 
@@ -238,7 +238,7 @@ minetest.register_node("morethings_nature:vine_violett", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 
 
@@ -260,7 +260,7 @@ minetest.register_node("morethings_nature:vine_yellow", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 
 
@@ -282,7 +282,7 @@ minetest.register_node("morethings_nature:vine_black_large", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 
 
@@ -304,7 +304,7 @@ minetest.register_node("morethings_nature:vine_cyan_large", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 
 
@@ -326,7 +326,7 @@ minetest.register_node("morethings_nature:vine_dark_blue_large", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 
 
@@ -348,7 +348,7 @@ minetest.register_node("morethings_nature:vine_green_large", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 
 
@@ -370,7 +370,7 @@ minetest.register_node("morethings_nature:vine_light_blue_large", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 
 
@@ -392,7 +392,7 @@ minetest.register_node("morethings_nature:vine_orange_large", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 
 
@@ -414,7 +414,7 @@ minetest.register_node("morethings_nature:vine_pink_large", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 
 
@@ -436,7 +436,7 @@ minetest.register_node("morethings_nature:vine_red_large", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 
 
@@ -458,7 +458,7 @@ minetest.register_node("morethings_nature:vine_violett_large", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 
 
@@ -480,6 +480,6 @@ minetest.register_node("morethings_nature:vine_yellow_large", {
 		--wall_bottom = = <default>
 		--wall_side = = <default>
 	},
-	groups = {snappy = 3},
+	groups = {snappy = 3, attached_node = 1},
 	sounds = default.node_sound_leaves_defaults(),
 }) 

@@ -2,11 +2,29 @@
 ---Crafting Resource Blocks
 
 minetest.register_craft({
+	output = "default:glass",
+	recipe = {
+		{"morethings_items:ingot_glass", "morethings_items:ingot_glass", "morethings_items:ingot_glass"},
+		{"morethings_items:ingot_glass", "morethings_items:ingot_glass", "morethings_items:ingot_glass"},
+		{"morethings_items:ingot_glass", "morethings_items:ingot_glass", "morethings_items:ingot_glass"}
+	}
+})
+
+minetest.register_craft({
 	output = "morethings_nodes:resource_block_red",
 	recipe = {
 		{"morethings_items:ingot_red", "morethings_items:ingot_red", "morethings_items:ingot_red"},
 		{"morethings_items:ingot_red", "morethings_items:ingot_red", "morethings_items:ingot_red"},
 		{"morethings_items:ingot_red", "morethings_items:ingot_red", "morethings_items:ingot_red"}
+	}
+})
+
+minetest.register_craft({
+	output = "morethings_nodes:resource_block_glow",
+	recipe = {
+		{"morethings_items:ingot_glow", "morethings_items:ingot_glow", "morethings_items:ingot_glow"},
+		{"morethings_items:ingot_glow", "morethings_items:ingot_glow", "morethings_items:ingot_glow"},
+		{"morethings_items:ingot_glow", "morethings_items:ingot_glow", "morethings_items:ingot_glow"}
 	}
 })
 

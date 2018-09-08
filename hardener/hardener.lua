@@ -50,7 +50,7 @@ local inactive_formspec =
 	default.get_hotbar_bg(0, 4.25)
 
 --
--- Node callback functions that are the same for active and inactive claycrafter
+-- Node callback functions that are the same for active and inactive hardener
 --
 
 local function can_dig(pos, player)
@@ -209,7 +209,7 @@ minetest.register_abm({
 		
 		-- Check if we have enough fuel to burn
 		if fuel_time < fuel_totaltime then
-			-- The claycrafter is currently active and has enough fuel
+			-- The hardener is currently active and has enough fuel
 			fuel_time = fuel_time + 1
 			
 			-- If there is a cookable item then check if it is ready yet

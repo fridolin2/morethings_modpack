@@ -31,6 +31,9 @@ License of media (textures, sounds, meshes):
 fridolin2 (CC BY-SA 3.0):
 all textures are by fridolin2
 
+Grass Textures By the Default Author
+
+Bonemeal Code by TenPlus1
 
 Details of Licenses:
 --------------------

@@ -1,6 +1,34 @@
 
 ---Define Resource Blocks
 
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_items:ingot_glass" 9',
+	recipe = {"default:glass"},
+})
+
+minetest.register_node("morethings_nodes:resource_block_glow", {
+	description = "Glow Block",
+	tiles = {
+		{name="morethings_glow_block.png", animation={type="vertical_frames",
+		aspect_w=16, aspect_h=16, length=3}},
+	},
+	is_ground_content = true,
+	sounds = default.node_sound_stone_defaults(),
+	groups = {cracky = 3},
+	sunlight_propagates = true,
+	walkable = true,
+	buildable_to = false,
+	inventory_image = {"morethings_glow_block.png"},
+	paramtype = "light"
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_items:ingot_glow" 9',
+	recipe = {"morethings_nodes:resource_block_glow"},
+})
+
 minetest.register_node("morethings_nodes:resource_block_gem_block_pink", {
 	description = "Pink Gem Block",
 	tiles = {"morethings_gem_block_pink.png"},
