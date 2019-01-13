@@ -39,6 +39,7 @@ dofile(minetest.get_modpath("morethings_nodes").."/morethings_pathblocks.lua")
 dofile(minetest.get_modpath("morethings_nodes").."/compressed_blocks.lua")
 dofile(minetest.get_modpath("morethings_nodes").."/chalk_blocks.lua")
 dofile(minetest.get_modpath("morethings_nodes").."/morethings_concrete.lua")
+dofile(minetest.get_modpath("morethings_nodes").."/morethings_stones.lua")
   
 
 
@@ -211,90 +212,6 @@ minetest.register_node("morethings_nodes:building_no_gravitiy_gravel_old", {
 -------------------------
 ---Define other Blocks---
 -------------------------
-
-minetest.register_node("morethings_nodes:desert_stone_with_moss", {
-	description = "Desert Stone with Moss",
-	tiles = {"default_desert_stone.png^morethings_moss_top.png",
-		{name = "default_desert_stone.png^morethings_moss_side.png",
-			tileable_vertical = false}},
-	groups = {cracky = 3, soil = 1, spreading_dirt_type = 1},
-	drop = "default:desert_stone",
-	sounds = default.node_sound_stone_defaults({
-		footstep = {name = "default_grass_footstep", gain = 0.25},
-	}),
-})
-
-minetest.register_node("morethings_nodes:stone_with_grass", {
-	description = "Stone with Grass",
-	tiles = {"default_grass.png", "default_stone.png",
-		{name = "default_stone.png^default_grass_side.png",
-			tileable_vertical = false}},
-	groups = {cracky = 3, soil = 1, spreading_dirt_type = 1},
-	drop = "default:stone",
-	sounds = default.node_sound_stone_defaults({
-		footstep = {name = "default_grass_footstep", gain = 0.25},
-	}),
-})
-
-minetest.register_node("morethings_nodes:cobble_with_grass", {
-	description = "Cobble with Grass",
-	tiles = {"default_grass.png", "default_cobble.png",
-		{name = "default_cobble.png^default_grass_side.png",
-			tileable_vertical = false}},
-	groups = {cracky = 3, soil = 1, spreading_dirt_type = 1},
-	drop = "default:cobble",
-	sounds = default.node_sound_stone_defaults({
-		footstep = {name = "default_grass_footstep", gain = 0.25},
-	}),
-})
-
-minetest.register_node("morethings_nodes:desert_cobble_with_grass", {
-	description = "Desert Cobble with Grass",
-	tiles = {"default_grass.png", "default_desert_cobble.png",
-		{name = "default_desert_cobble.png^default_grass_side.png",
-			tileable_vertical = false}},
-	groups = {cracky = 3, soil = 1, spreading_dirt_type = 1},
-	drop = "default:desert_cobble",
-	sounds = default.node_sound_stone_defaults({
-		footstep = {name = "default_grass_footstep", gain = 0.25},
-	}),
-})
-
-minetest.register_node("morethings_nodes:desert_stone_with_grass", {
-	description = "Desert Stone with Grass",
-	tiles = {"default_grass.png", "default_desert_stone.png",
-		{name = "default_desert_stone.png^default_grass_side.png",
-			tileable_vertical = false}},
-	groups = {cracky = 3, soil = 1, spreading_dirt_type = 1},
-	drop = "default:desert_stone",
-	sounds = default.node_sound_stone_defaults({
-		footstep = {name = "default_grass_footstep", gain = 0.25},
-	}),
-})
-
-minetest.register_node("morethings_nodes:coal_stone_with_grass", {
-	description = "Coal Stone with Grass",
-	tiles = {"default_grass.png", "moreblocks_coal_stone.png",
-		{name = "moreblocks_coal_stone.png^default_grass_side.png",
-			tileable_vertical = false}},
-	groups = {cracky = 3, soil = 1, spreading_dirt_type = 1},
-	drop = "moreblocks:coal_stone",
-	sounds = default.node_sound_stone_defaults({
-		footstep = {name = "default_grass_footstep", gain = 0.25},
-	}),
-})
-
-minetest.register_node("morethings_nodes:iron_stone_with_grass", {
-	description = "Iron Stone with Grass",
-	tiles = {"default_grass.png", "moreblocks_iron_stone.png",
-		{name = "moreblocks_iron_stone.png^default_grass_side.png",
-			tileable_vertical = false}},
-	groups = {cracky = 3, soil = 1, spreading_dirt_type = 1},
-	drop = "moreblocks:iron_stone",
-	sounds = default.node_sound_stone_defaults({
-		footstep = {name = "default_grass_footstep", gain = 0.25},
-	}),
-})
 
 minetest.register_node("morethings_nodes:building_random_block", {
 	description = "Random Block",

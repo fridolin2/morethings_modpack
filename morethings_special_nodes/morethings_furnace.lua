@@ -250,9 +250,12 @@ end
 minetest.register_node("morethings_special_nodes:furnace", {
 	description = "Furnace",
 	tiles = {
-		"morethings_furnace_top.png", "morethings_furnace_bottom.png",
-		"morethings_furnace_side.png", "morethings_furnace_side.png",
-		"morethings_furnace_side.png", "morethings_furnace_front.png"
+		"morethings_furnace_top.png",
+		"morethings_furnace_bottom.png",
+		"morethings_furnace_side.png",
+		"morethings_furnace_side.png",
+		"morethings_furnace_side.png",
+		"morethings_furnace_front.png"
 	},
 	paramtype2 = "facedir",
 	groups = {cracky=2},
