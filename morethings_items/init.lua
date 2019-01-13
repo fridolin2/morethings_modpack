@@ -21,7 +21,7 @@ minetest.register_alias("morethings:coal_crumb", "morethings_items:coal_crumb")
 minetest.register_alias("morethings:iron_shavings", "morethings_items:shavings_iron")
 minetest.register_alias("morethings:copper_shavings", "morethings_items:shavings_copper")
 minetest.register_alias("morethings:gold_shavings", "morethings_items:shavings_gold")
-
+minetest.register_alias("morethings_items:ingot_red_empowered", "morethings_items:ingot_red_enhanced")
 ---DEFINE CRAFT ITEMS
 
 minetest.register_craftitem("morethings_items:ingot_coal", {
@@ -125,15 +125,13 @@ minetest.register_craftitem("morethings_items:gem_yellow", {
 })
 
 
-
-
 minetest.register_craftitem("morethings_items:ingot_red", {
 	description = "Red Ingot",
 	inventory_image = "morethings_red_ingot.png",
 })
 
-minetest.register_craftitem("morethings_items:ingot_red_empowered", {
-	description = "Red Ingot Empowered",
+minetest.register_craftitem("morethings_items:ingot_red_enhanced", {
+	description = "Enhanced Red Ingot",
 	inventory_image = "morethings_red_ingot_empowered.png",
 })
 

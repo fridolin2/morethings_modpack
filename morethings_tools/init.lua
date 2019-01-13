@@ -90,21 +90,26 @@ minetest.register_tool("morethings_tools:desert_stone_pickaxe", {
 
 --Define Pickaxes crafting recipes
 
+
 minetest.register_craft({
 	output = "morethings_tools:red_pickaxe",
 	recipe = {
-		{"morethings:red_crystal", "morethings:red_crystal", "morethings:red_crystal"},
-		{"", "default:stick", ""},
-		{"", "default:stick", ""}
+		{"morethings:red_ingot","morethings:red_ingot","morethings_items:ingot_red_enhanced","morethings:red_ingot","morethings:red_ingot"},
+		{"morethings:red_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:red_ingot"},
+		{"morethings:red_ingot","morethings_nodes:enhanced_tree","default:pick_diamond","morethings_nodes:enhanced_tree","morethings:red_ingot"},
+		{"morethings:red_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:red_ingot"},
+		{"morethings:red_ingot","morethings:red_ingot","morethings:red_ingot","morethings:red_ingot","morethings:red_ingot"},
 	}
 })
 
 minetest.register_craft({
 	output = "morethings_tools:krypton_pickaxe",
 	recipe = {
-		{"morethings:krypton_ingot", "morethings:krypton_ingot", "morethings:red_ingot"},
-		{"", "default:stick", ""},
-		{"", "default:stick", ""}
+		{"morethings:krypton_ingot","morethings:krypton_ingot","morethings_items:ingot_red_enhanced","morethings:krypton_ingot","morethings:krypton_ingot"},
+		{"morethings:krypton_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:krypton_ingot"},
+		{"morethings:krypton_ingot","morethings_nodes:enhanced_tree","default:pick_diamond","morethings_nodes:enhanced_tree","morethings:krypton_ingot"},
+		{"morethings:krypton_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:krypton_ingot"},
+		{"morethings:krypton_ingot","morethings:krypton_ingot","morethings:krypton_ingot","morethings:krypton_ingot","morethings:krypton_ingot"},
 	}
 })
 
@@ -120,31 +125,35 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "morethings_tools:ghost_pickaxe",
 	recipe = {
-		{"morethings:ghost_ingot", "morethings:ghost_ingot", "morethings:ghost_ingot"},
-		{"", "default:stick", ""},
-		{"", "default:stick", ""}
+		{"morethings:ghost_ingot","morethings:ghost_ingot","morethings_items:ingot_red_enhanced","morethings:ghost_ingot","morethings:ghost_ingot"},
+		{"morethings:ghost_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:ghost_ingot"},
+		{"morethings:ghost_ingot","morethings_nodes:enhanced_tree","default:pick_diamond","morethings_nodes:enhanced_tree","morethings:ghost_ingot"},
+		{"morethings:ghost_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:ghost_ingot"},
+		{"morethings:ghost_ingot","morethings:ghost_ingot","morethings:ghost_ingot","morethings:ghost_ingot","morethings:ghost_ingot"},
 	}
 })
-
 
 minetest.register_craft({
 	output = "morethings_tools:silk_touch_pickaxe",
 	recipe = {
-		{"morethings_nodes:resource_block_silk_touch", "morethings_nodes:resource_block_silk_touch", "morethings_nodes:resource_block_silk_touch"},
-		{"", "morethings_items:golden_rod", ""},
-		{"", "morethings_items:golden_rod", ""}
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:enhanced_tree","default:pick_diamond","morethings_nodes:enhanced_tree","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch"},
 	}
 })
 
 minetest.register_craft({
 	output = "morethings_tools:silk_touch_pickaxe2",
 	recipe = {
-		{"morethings_nodes:resource_block_silk_touch", "morethings_nodes:resource_block_silk_touch", "morethings_nodes:resource_block_silk_touch"},
-		{"", "morethings_items:diamond_rod", ""},
-		{"", "morethings_items:diamond_rod", ""}
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_items:diamond_rod","morethings_nodes:enhanced_tree","morethings_items:diamond_rod","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:enhanced_tree","morethings_tools:silk_touch_pickaxe","morethings_nodes:enhanced_tree","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_items:diamond_rod","morethings_nodes:enhanced_tree","morethings_items:diamond_rod","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch"},
 	}
 })
-
 minetest.register_craft({
 	output = "morethings_tools:mushroom_pickaxe_red",
 	recipe = {
@@ -212,90 +221,57 @@ minetest.register_tool("morethings_tools:krypton_axe", {
 minetest.register_craft({
 	output = "morethings_tools:red_axe",
 	recipe = {
-		{"morethings:red_crystal", "morethings:red_crystal", ""},
-		{"morethings:red_crystal", "default:stick", ""},
-		{"", "default:stick", ""}
+		{"morethings:red_ingot","morethings:red_ingot","morethings_items:ingot_red_enhanced","morethings:red_ingot","morethings:red_ingot"},
+		{"morethings:red_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:red_ingot"},
+		{"morethings:red_ingot","morethings_nodes:enhanced_tree","default:axe_diamond","morethings_nodes:enhanced_tree","morethings:red_ingot"},
+		{"morethings:red_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:red_ingot"},
+		{"morethings:red_ingot","morethings:red_ingot","morethings:red_ingot","morethings:red_ingot","morethings:red_ingot"},
 	}
 })
 
-minetest.register_craft({
-	output = "morethings_tools:red_axe",
-	recipe = {
-		{"", "morethings:red_crystal", "morethings:red_crystal"},
-		{"", "default:stick", "morethings:red_crystal"},
-		{"", "default:stick", ""}
-	}
-})
+
 
 minetest.register_craft({
 	output = "morethings_tools:krypton_axe",
 	recipe = {
-		{"morethings:krypton_ingot", "morethings:krypton_ingot", ""},
-		{"morethings:krypton_ingot", "default:stick", ""},
-		{"", "default:stick", ""}
-	}
-})
-
-minetest.register_craft({
-	output = "morethings_tools:krypton_axe",
-	recipe = {
-		{"", "morethings:krypton_ingot", "morethings:krypton_ingot"},
-		{"", "default:stick", "morethings:krypton_ingot"},
-		{"", "default:stick", ""}
+		{"morethings:krypton_ingot","morethings:krypton_ingot","morethings_items:ingot_red_enhanced","morethings:krypton_ingot","morethings:krypton_ingot"},
+		{"morethings:krypton_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:krypton_ingot"},
+		{"morethings:krypton_ingot","morethings_nodes:enhanced_tree","default:axe_diamond","morethings_nodes:enhanced_tree","morethings:krypton_ingot"},
+		{"morethings:krypton_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:krypton_ingot"},
+		{"morethings:krypton_ingot","morethings:krypton_ingot","morethings:krypton_ingot","morethings:krypton_ingot","morethings:krypton_ingot"},
 	}
 })
 
 minetest.register_craft({
 	output = "morethings_tools:ghost_axe",
 	recipe = {
-		{"morethings:ghost_ingot", "morethings:ghost_ingot", ""},
-		{"morethings:ghost_ingot", "default:stick", ""},
-		{"", "default:stick", ""}
-	}
-})
-
-minetest.register_craft({
-	output = "morethings_tools:ghost_axe",
-	recipe = {
-		{"", "morethings:ghost_ingot", "morethings:ghost_ingot"},
-		{"", "default:stick", "morethings:ghost_ingot"},
-		{"", "default:stick", ""}
+		{"morethings:ghost_ingot","morethings:ghost_ingot","morethings_items:ingot_red_enhanced","morethings:ghost_ingot","morethings:ghost_ingot"},
+		{"morethings:ghost_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:ghost_ingot"},
+		{"morethings:ghost_ingot","morethings_nodes:enhanced_tree","default:axe_diamond","morethings_nodes:enhanced_tree","morethings:ghost_ingot"},
+		{"morethings:ghost_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:ghost_ingot"},
+		{"morethings:ghost_ingot","morethings:ghost_ingot","morethings:ghost_ingot","morethings:ghost_ingot","morethings:ghost_ingot"},
 	}
 })
 
 minetest.register_craft({
 	output = "morethings_tools:silk_touch_axe",
 	recipe = {
-		{"morethings_nodes:resource_block_silk_touch", "morethings_nodes:resource_block_silk_touch", ""},
-		{"morethings_nodes:resource_block_silk_touch", "morethings_items:golden_rod", ""},
-		{"", "morethings_items:golden_rod", ""}
-	}
-})
-
-minetest.register_craft({
-	output = "morethings_tools:silk_touch_axe",
-	recipe = {
-		{"", "morethings_nodes:resource_block_silk_touch", "morethings_nodes:resource_block_silk_touch"},
-		{"", "morethings_items:golden_rod", "morethings_nodes:resource_block_silk_touch"},
-		{"", "morethings_items:golden_rod", ""}
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:enhanced_tree","default:axe_diamond","morethings_nodes:enhanced_tree","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch"},
 	}
 })
 
 minetest.register_craft({
 	output = "morethings_tools:silk_touch_axe2",
 	recipe = {
-		{"morethings_nodes:resource_block_silk_touch", "morethings_nodes:resource_block_silk_touch", ""},
-		{"morethings_nodes:resource_block_silk_touch", "morethings_items:diamond_rod", ""},
-		{"", "morethings_items:diamond_rod", ""}
-	}
-})
-
-minetest.register_craft({
-	output = "morethings_tools:silk_touch_axe2",
-	recipe = {
-		{"", "morethings_nodes:resource_block_silk_touch", "morethings_nodes:resource_block_silk_touch"},
-		{"", "morethings_items:diamond_rod", "morethings_nodes:resource_block_silk_touch"},
-		{"", "morethings_items:diamond_rod", ""}
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_items:diamond_rod","morethings_nodes:enhanced_tree","morethings_items:diamond_rod","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:enhanced_tree","morethings_tools:silk_touch_axe","morethings_nodes:enhanced_tree","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_items:diamond_rod","morethings_nodes:enhanced_tree","morethings_items:diamond_rod","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch"},
 	}
 })
 
@@ -363,15 +339,6 @@ minetest.register_tool("morethings_tools:desert_stone_shovel", {
 --Define Shovels Crafting Recipes
 
 minetest.register_craft({
-	output = "morethings_tools:red_shovel",
-	recipe = {
-		{"", "morethings:red_crystal", ""},
-		{"", "default:stick", ""},
-		{"", "default:stick", ""}
-	}
-})
-
-minetest.register_craft({
 	output = "morethings_tools:desert_stone_shovel",
 	recipe = {
 		{"", "default:desert_stone", ""},
@@ -381,38 +348,57 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
+	output = "morethings_tools:red_shovel",
+	recipe = {
+		{"morethings:red_ingot","morethings:red_ingot","morethings_items:ingot_red_enhanced","morethings:red_ingot","morethings:red_ingot"},
+		{"morethings:red_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:red_ingot"},
+		{"morethings:red_ingot","morethings_nodes:enhanced_tree","default:shovel_diamond","morethings_nodes:enhanced_tree","morethings:red_ingot"},
+		{"morethings:red_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:red_ingot"},
+		{"morethings:red_ingot","morethings:red_ingot","morethings:red_ingot","morethings:red_ingot","morethings:red_ingot"},
+	}
+})
+
+minetest.register_craft({
 	output = "morethings_tools:krypton_shovel",
 	recipe = {
-		{"", "morethings:krypton_ingot", ""},
-		{"", "default:stick", ""},
-		{"", "default:stick", ""}
+		{"morethings:krypton_ingot","morethings:krypton_ingot","morethings_items:ingot_red_enhanced","morethings:krypton_ingot","morethings:krypton_ingot"},
+		{"morethings:krypton_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:krypton_ingot"},
+		{"morethings:krypton_ingot","morethings_nodes:enhanced_tree","default:shovel_diamond","morethings_nodes:enhanced_tree","morethings:krypton_ingot"},
+		{"morethings:krypton_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:krypton_ingot"},
+		{"morethings:krypton_ingot","morethings:krypton_ingot","morethings:krypton_ingot","morethings:krypton_ingot","morethings:krypton_ingot"},
 	}
 })
 
 minetest.register_craft({
 	output = "morethings_tools:ghost_shovel",
 	recipe = {
-		{"", "morethings:ghost_ingot", ""},
-		{"", "default:stick", ""},
-		{"", "default:stick", ""}
+		{"morethings:ghost_ingot","morethings:ghost_ingot","morethings_items:ingot_red_enhanced","morethings:ghost_ingot","morethings:ghost_ingot"},
+		{"morethings:ghost_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:ghost_ingot"},
+		{"morethings:ghost_ingot","morethings_nodes:enhanced_tree","default:shovel_diamond","morethings_nodes:enhanced_tree","morethings:ghost_ingot"},
+		{"morethings:ghost_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:ghost_ingot"},
+		{"morethings:ghost_ingot","morethings:ghost_ingot","morethings:ghost_ingot","morethings:ghost_ingot","morethings:ghost_ingot"},
 	}
 })
 
 minetest.register_craft({
 	output = "morethings_tools:silk_touch_shovel",
 	recipe = {
-		{"", "morethings_nodes:resource_block_silk_touch", ""},
-		{"", "morethings_items:golden_rod", ""},
-		{"", "morethings_items:golden_rod", ""}
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:enhanced_tree","default:shovel_diamond","morethings_nodes:enhanced_tree","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch"},
 	}
 })
 
 minetest.register_craft({
 	output = "morethings_tools:silk_touch_shovel2",
 	recipe = {
-		{"", "morethings_nodes:resource_block_silk_touch", ""},
-		{"", "morethings_items:diamond_rod", ""},
-		{"", "morethings_items:diamond_rod", ""}
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_items:diamond_rod","morethings_nodes:enhanced_tree","morethings_items:diamond_rod","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:enhanced_tree","morethings_tools:silk_touch_shovel","morethings_nodes:enhanced_tree","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_items:diamond_rod","morethings_nodes:enhanced_tree","morethings_items:diamond_rod","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch"},
 	}
 })
 
@@ -485,48 +471,59 @@ minetest.register_tool("morethings_tools:silk_touch_sword2", {
 
 
 --Define Swords crafting recipes
+
 minetest.register_craft({
 	output = "morethings_tools:red_sword",
 	recipe = {
-		{"", "morethings:red_crystal", ""},
-		{"", "morethings:red_crystal", ""},
-		{"", "default:stick", ""}
-	}
-})
-
-minetest.register_craft({
-	output = "morethings_tools:ghost_sword",
-	recipe = {
-		{"", "morethings:ghost_ingot", ""},
-		{"", "morethings:ghost_ingot", ""},
-		{"", "default:stick", ""}
+		{"morethings:red_ingot","morethings:red_ingot","morethings_items:ingot_red_enhanced","morethings:red_ingot","morethings:red_ingot"},
+		{"morethings:red_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:red_ingot"},
+		{"morethings:red_ingot","morethings_nodes:enhanced_tree","default:sword_diamond","morethings_nodes:enhanced_tree","morethings:red_ingot"},
+		{"morethings:red_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:red_ingot"},
+		{"morethings:red_ingot","morethings:red_ingot","morethings:red_ingot","morethings:red_ingot","morethings:red_ingot"},
 	}
 })
 
 minetest.register_craft({
 	output = "morethings_tools:krypton_sword",
 	recipe = {
-		{"", "morethings:krypton_ingot", ""},
-		{"", "morethings:krypton_ingot", ""},
-		{"", "default:stick", ""}
+		{"morethings:krypton_ingot","morethings:krypton_ingot","morethings_items:ingot_red_enhanced","morethings:krypton_ingot","morethings:krypton_ingot"},
+		{"morethings:krypton_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:krypton_ingot"},
+		{"morethings:krypton_ingot","morethings_nodes:enhanced_tree","default:sword_diamond","morethings_nodes:enhanced_tree","morethings:krypton_ingot"},
+		{"morethings:krypton_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:krypton_ingot"},
+		{"morethings:krypton_ingot","morethings:krypton_ingot","morethings:krypton_ingot","morethings:krypton_ingot","morethings:krypton_ingot"},
+	}
+})
+
+minetest.register_craft({
+	output = "morethings_tools:ghost_sword",
+	recipe = {
+		{"morethings:ghost_ingot","morethings:ghost_ingot","morethings_items:ingot_red_enhanced","morethings:ghost_ingot","morethings:ghost_ingot"},
+		{"morethings:ghost_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:ghost_ingot"},
+		{"morethings:ghost_ingot","morethings_nodes:enhanced_tree","default:sword_diamond","morethings_nodes:enhanced_tree","morethings:ghost_ingot"},
+		{"morethings:ghost_ingot","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings:ghost_ingot"},
+		{"morethings:ghost_ingot","morethings:ghost_ingot","morethings:ghost_ingot","morethings:ghost_ingot","morethings:ghost_ingot"},
 	}
 })
 
 minetest.register_craft({
 	output = "morethings_tools:silk_touch_sword",
 	recipe = {
-		{"", "morethings_nodes:resource_block_silk_touch", ""},
-		{"", "morethings_nodes:resource_block_silk_touch", ""},
-		{"", "morethings_items:golden_rod", ""}
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:enhanced_tree","default:sword_diamond","morethings_nodes:enhanced_tree","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_items:golden_rod","morethings_nodes:enhanced_tree","morethings_items:golden_rod","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch"},
 	}
 })
 
 minetest.register_craft({
 	output = "morethings_tools:silk_touch_sword2",
 	recipe = {
-		{"", "morethings_nodes:resource_block_silk_touch", ""},
-		{"", "morethings_nodes:resource_block_silk_touch", ""},
-		{"", "morethings_items:diamond_rod", ""}
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_items:diamond_rod","morethings_nodes:enhanced_tree","morethings_items:diamond_rod","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:enhanced_tree","morethings_tools:silk_touch_sword","morethings_nodes:enhanced_tree","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_items:diamond_rod","morethings_nodes:enhanced_tree","morethings_items:diamond_rod","morethings_nodes:resource_block_silk_touch"},
+		{"morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch","morethings_nodes:resource_block_silk_touch"},
 	}
 })
 

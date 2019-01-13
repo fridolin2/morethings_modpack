@@ -1,4 +1,5 @@
 
+
 ---Crafting Resource Blocks
 
 minetest.register_craft({
@@ -16,6 +17,15 @@ minetest.register_craft({
 		{"morethings_items:ingot_red", "morethings_items:ingot_red", "morethings_items:ingot_red"},
 		{"morethings_items:ingot_red", "morethings_items:ingot_red", "morethings_items:ingot_red"},
 		{"morethings_items:ingot_red", "morethings_items:ingot_red", "morethings_items:ingot_red"}
+	}
+})
+
+minetest.register_craft({
+	output = "morethings_nodes:resource_block_red_enhanced",
+	recipe = {
+		{"morethings_items:ingot_red_enhanced", "morethings_items:ingot_red_enhanced", "morethings_items:ingot_red_enhanced"},
+		{"morethings_items:ingot_red_enhanced", "morethings_items:ingot_red_enhanced", "morethings_items:ingot_red_enhanced"},
+		{"morethings_items:ingot_red_enhanced", "morethings_items:ingot_red_enhanced", "morethings_items:ingot_red_enhanced"}
 	}
 })
 
@@ -65,7 +75,7 @@ minetest.register_craft({
 })
 
 minetest.register_craft({
-	output = "morethings_nodes:red_block2",
+	output = "morethings_nodes:red_crystal_block",
 	recipe = {
 		{"morethings_crystals:red_crystal", "morethings_crystals:red_crystal", "morethings_crystals:red_crystal"},
 		{"morethings_crystals:red_crystal", "morethings_crystals:red_crystal", "morethings_crystals:red_crystal"},

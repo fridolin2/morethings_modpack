@@ -399,13 +399,82 @@ minetest.register_node("morethings_nodes:soft_cactus", {
 	sunlight_propagates = true,
 	walkable = true,
 	buildable_to = false,
-	paramtype = "light"
+	paramtype = "light", 
+	on_place = minetest.rotate_node,
+})
+
+
+function default.grow_soft_cactus(pos, node)
+	if node.param2 >= 4 then
+		return
+	end
+	pos.y = pos.y - 1
+	if minetest.get_item_group(minetest.get_node(pos).name, "sand") == 0 then
+		return
+	end
+	pos.y = pos.y + 1
+	local height = 0
+	while node.name == "morethings_nodes:soft_cactus" and height < 4 do
+		height = height + 1
+		pos.y = pos.y + 1
+		node = minetest.get_node(pos)
+	end
+	if height == 4 or node.name ~= "air" then
+		return
+	end
+	if minetest.get_node_light(pos) < 13 then
+		return
+	end
+	minetest.set_node(pos, {name = "morethings_nodes:soft_cactus"})
+	return true
+end
+
+minetest.register_abm({
+	label = "Grow Soft cactus",
+	nodenames = {"morethings_nodes:soft_cactus"},
+	neighbors = {"group:sand"},
+	interval = 12,
+	chance = 83,
+	action = default.grow_soft_cactus
 })
 
 minetest.register_craft( {
 	type = "shapeless", 
 	output = '"morethings_items:cactus_spines" 4',
 	recipe = {"default:cactus", "default:cactus"},
+})
+
+minetest.register_node("morethings_nodes:enhanced_tree", {
+	description = "Enhanced Tree",
+		
+	tiles = {
+		"morethings_enhanced_tree_top.png",
+		"morethings_enhanced_tree_top.png",
+		"morethings_enhanced_tree_side.png",
+		"morethings_enhanced_tree_side.png",
+		"morethings_enhanced_tree_side.png",
+		"morethings_enhanced_tree_side.png", 
+},
+	is_ground_content = true,
+	sounds = default.node_sound_wood_defaults(),
+	groups = {choppy=3, oddly_breakable_by_hand = 1, flammable = 2},
+	paramtype2 = "facedir",
+	sunlight_propagates = true,
+	walkable = true,
+	buildable_to = false,
+	paramtype = "light", 
+	on_place = minetest.rotate_node,
+})
+
+minetest.register_craft({
+	output = '"morethings_nodes:enhanced_tree" 4',
+	recipe = {
+		{"group:tree","group:tree","group:tree","group:tree","group:tree"},
+		{"group:tree","morethings_items:ingot_red_empowered","morethings_items:ingot_red_empowered","morethings_items:ingot_red_empowered","group:tree"},
+		{"group:tree","morethings_items:ingot_red_empowered","default:goldblock","morethings_items:ingot_red_empowered","group:tree"},
+		{"group:tree","morethings_items:ingot_red_empowered","morethings_items:ingot_red_empowered","morethings_items:ingot_red_empowered","group:tree"},
+		{"group:tree","group:tree","group:tree","group:tree","group:tree"},
+	}
 })
 
 ----------------------------
@@ -452,6 +521,86 @@ minetest.register_node("morethings_nodes:building_basalt_dark", {
 		paramtype = "light"
 })
 
+------------------------
+---Define Stone Tiles---
+------------------------
+minetest.register_node("morethings_nodes:stone_tiles_desert_medium", {
+		description = "Medium Desert Stone Tiles",
+		tiles = {"morethings_desert_stone_tiles_medium.png"},
+		is_ground_content = true,
+		sounds = default.node_sound_stone_defaults(),
+		groups = {cracky=3},
+		sunlight_propagates = true,
+		walkable = true,
+		buildable_to = false,
+		inventory_image = {"morethings_desert_stone_tiles_medium.png"},
+		paramtype = "light"
+})
+
+minetest.register_node("morethings_nodes:stone_tiles_desert_small", {
+		description = "Small Desert Stone Tiles",
+		tiles = {"morethings_desert_stone_tiles_small.png"},
+		is_ground_content = true,
+		sounds = default.node_sound_stone_defaults(),
+		groups = {cracky=3},
+		sunlight_propagates = true,
+		walkable = true,
+		buildable_to = false,
+		inventory_image = {"morethings_desert_stone_tiles_small.png"},
+		paramtype = "light"
+})
+
+minetest.register_node("morethings_nodes:stone_tiles_stone_medium", {
+		description = "Medium Stone Tiles",
+		tiles = {"morethings_stone_tiles_medium.png"},
+		is_ground_content = true,
+		sounds = default.node_sound_stone_defaults(),
+		groups = {cracky=3},
+		sunlight_propagates = true,
+		walkable = true,
+		buildable_to = false,
+		inventory_image = {"morethings_stone_tiles_medium.png"},
+		paramtype = "light"
+})
+
+minetest.register_node("morethings_nodes:stone_tiles_stone_small", {
+		description = "Small Stone Tiles",
+		tiles = {"morethings_stone_tiles_small.png"},
+		is_ground_content = true,
+		sounds = default.node_sound_stone_defaults(),
+		groups = {cracky=3},
+		sunlight_propagates = true,
+		walkable = true,
+		buildable_to = false,
+		inventory_image = {"morethings_stone_tiles_small.png"},
+		paramtype = "light"
+})
+
+minetest.register_node("morethings_nodes:stone_tiles_silver_sand_stone_medium", {
+		description = "Medium Silver Sand Stone Tiles",
+		tiles = {"morethings_silver_sand_stone_tiles_medium.png"},
+		is_ground_content = true,
+		sounds = default.node_sound_stone_defaults(),
+		groups = {cracky=3},
+		sunlight_propagates = true,
+		walkable = true,
+		buildable_to = false,
+		inventory_image = {"morethings_silver_sand_stone_tiles_medium.png"},
+		paramtype = "light"
+})
+
+minetest.register_node("morethings_nodes:stone_tiles_silver_sand_stone_small", {
+		description = "Small Silver Sand Stone Tiles",
+		tiles = {"morethings_silver_sand_stone_tiles_small.png"},
+		is_ground_content = true,
+		sounds = default.node_sound_stone_defaults(),
+		groups = {cracky=3},
+		sunlight_propagates = true,
+		walkable = true,
+		buildable_to = false,
+		inventory_image = {"morethings_silver_sand_stone_tiles_small.png"},
+		paramtype = "light"
+})
 
 
 ------------------
@@ -461,9 +610,10 @@ minetest.register_node("morethings_nodes:building_clean_glass", {
 		description = "Clean Glass",
 		tiles = {"morethings_clean_glass.png"},
 		is_ground_content = true,
-		sounds = default.node_sound_stone_defaults(),
+		sounds = default.node_sound_glass_defaults(),
 		groups = {cracky=3},
 		sunlight_propagates = true,
+		drawtype = "glasslike",
 		drawtype = "glasslike",
 		walkable = true,
 		buildable_to = false,
@@ -522,7 +672,7 @@ minetest.register_node("morethings_nodes:full_block_cold_grass", {
 })
 
 minetest.register_node("morethings_nodes:full_block_crystal_grass", {
-	description = "Full Grass",
+	description = "Full Crytal Grass",
 	tiles = {"ethereal_grass_crystal_top.png"},
 	paramtype2 = "facedir",
 	groups = {crumbly=3},

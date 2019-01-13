@@ -1,4 +1,7 @@
+---Aliases
 
+minetest.register_alias("morethings_nodes:red_block2", "morethings_nodes:red_crystal_block")
+minetest.register_alias("morethings_nodes:red_block2empowered", "morethings_nodes:red_crystal_block_enhanced")
 ---Define Resource Blocks
 
 minetest.register_craft( {
@@ -241,19 +244,33 @@ minetest.register_craft( {
 	recipe = {"morethings_nodes:resource_block_red"},
 })
 
-minetest.register_node("morethings_nodes:red_block2", {
-	description = "Red Block2",
-	tiles = {"red_block2.png"},
+minetest.register_node("morethings_nodes:resource_block_red_enhanced", {
+	description = "Enhanced Red Block",
+	tiles = {"morethings_red_block_enhanced.png"},
 	groups = {cracky=3},
 	sounds = default.node_sound_stone_defaults(),
 	is_ground_content = true,
 })
 
-minetest.register_node("morethings_nodes:red_block2empowered", {
-	description = "Red Block2Empowered",
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_items:ingot_red_enhanced" 9',
+	recipe = {"morethings_nodes:resource_block_red_enhanced"},
+})
+
+minetest.register_node("morethings_nodes:red_crystal_block", {
+	description = "Red Crystal Block",
+	tiles = {"red_block2.png"},
+	groups = {cracky=3},
+	sounds = default.node_sound_glass_defaults(),
+	is_ground_content = true,
+})
+
+minetest.register_node("morethings_nodes:red_crystal_block_enhanced", {
+	description = "Enhanced Red Crystal Block",
 	tiles = {"red_block2empowered.png"},
 	groups = {cracky=3},
-	sounds = default.node_sound_stone_defaults(),
+	sounds = default.node_sound_glass_defaults(),
 	is_ground_content = true,
 })
 

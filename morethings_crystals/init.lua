@@ -4,7 +4,7 @@
 minetest.register_alias("morethings:red_crystal", "morethings_crystals:red_crystal")
 minetest.register_alias("morethings:red_crystal_empowered", "morethings_crystals:red_crystal_empowered")
 minetest.register_alias("morethings:red_crystal14", "morethings_crystals:red_crystal14")
-
+minetest.register_alias("morethings_crystals:red_crystal_empowered", "morethings_crystals:red_crystal_enhanced")
 -------Define Crystals
 
 
@@ -128,8 +128,8 @@ minetest.register_node("morethings_crystals:fluorit", {
 	},
 })
 
-minetest.register_node("morethings_crystals:red_crystal_empowered", {
-	description = "Red Crystal Empowered",
+minetest.register_node("morethings_crystals:red_crystal_enhanced", {
+	description = "Enhanced Red Crystal",
 	mesh = "red_crystal_empowered.obj",
 	tiles = {"red_crystal_empowered.png"},
 	paramtype = "light",
@@ -147,7 +147,7 @@ minetest.register_node("morethings_crystals:red_crystal_empowered", {
 
 
 minetest.register_craft({
-	output = "morethings_crystals:red_crystal_empowered",
+	output = "morethings_crystals:red_crystal_enhanced",
 	recipe = {
 		{"morethings_items:ingot_obsidian", "morethings_items:ingot_obsidian", "morethings_items:ingot_obsidian"},
 		{"morethings_items:ingot_obsidian", "morethings_crystals:red_crystal", "morethings_items:ingot_obsidian"},
@@ -157,12 +157,12 @@ minetest.register_craft({
 
 minetest.register_craft( {
 	type = "shapeless",
-	output = '"morethings_crystals:red_crystal_empowered" 9',
-	recipe = {"morethings_nodes:red_block2empowered"},
+	output = '"morethings_crystals:red_crystal_enhanced" 9',
+	recipe = {"morethings_nodes:red_crystal_block_enhanced"},
 })
 
 minetest.register_craft( {
 	type = "shapeless",
 	output = '"morethings_crystals:red_crystal" 9',
-	recipe = {"morethings_nodes:red_block2"},
+	recipe = {"morethings_nodes:red_crystal_block"},
 })

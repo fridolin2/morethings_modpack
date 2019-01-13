@@ -10,3 +10,4 @@ pipeworks
 rainbow_ore
 shields
 unified_inventory
+workbench
