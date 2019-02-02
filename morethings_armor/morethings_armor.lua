@@ -379,9 +379,12 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "morethings_armor:hermes_boots",
 	recipe = {
-		{"morethings_items:ingot_hermes_gold", "", "morethings_items:ingot_hermes_gold"},
-		{"morethings_items:ingot_hermes_gold", "", "morethings_items:ingot_hermes_gold"},
-	},
+		{"morethings_items:ingot_hermes_gold","morethings_items:ingot_hermes_gold","morethings_items:ingot_red_enhanced","morethings_items:ingot_hermes_gold","morethings_items:ingot_hermes_gold"},
+		{"morethings_items:ingot_hermes_gold","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_hermes_gold"},
+		{"morethings_items:ingot_hermes_gold","morethings_nodes:enhanced_tree","3d_armor:boots_diamond","morethings_nodes:enhanced_tree","morethings_items:ingot_hermes_gold"},
+		{"morethings_items:ingot_hermes_gold","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_hermes_gold"},
+		{"morethings_items:ingot_hermes_gold","morethings_items:ingot_hermes_gold","morethings_items:ingot_hermes_gold","morethings_items:ingot_hermes_gold","morethings_items:ingot_hermes_gold"},
+	}
 })
 
 
@@ -452,129 +455,168 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "morethings_armor:red_helmet",
 	recipe = {
-		{"morethings:red_ingot", "morethings:red_ingot", "morethings:red_ingot"},
-		{"morethings:red_ingot", "", "morethings:red_ingot"},
-		{"", "", ""},
-	},
+		{"morethings_items:ingot_red","morethings_items:ingot_red","morethings_items:ingot_red_enhanced","morethings_items:ingot_red","morethings_items:ingot_red"},
+		{"morethings_items:ingot_red","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_red"},
+		{"morethings_items:ingot_red","morethings_nodes:enhanced_tree","3d_armor:helmet_diamond","morethings_nodes:enhanced_tree","morethings_items:ingot_red"},
+		{"morethings_items:ingot_red","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_red"},
+		{"morethings_items:ingot_red","morethings_items:ingot_red","morethings_items:ingot_red","morethings_items:ingot_red","morethings_items:ingot_red"},
+	}
 })
 minetest.register_craft({
 	output = "morethings_armor:red_chestplate",
 	recipe = {
-		{"morethings:red_ingot", "", "morethings:red_ingot"},
-		{"morethings:red_ingot", "morethings:red_ingot", "morethings:red_ingot"},
-		{"morethings:red_ingot", "morethings:red_ingot", "morethings:red_ingot"},
-	},
+		{"morethings_items:ingot_red","morethings_items:ingot_red","morethings_items:ingot_red_enhanced","morethings_items:ingot_red","morethings_items:ingot_red"},
+		{"morethings_items:ingot_red","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_red"},
+		{"morethings_items:ingot_red","morethings_nodes:enhanced_tree","3d_armor:chestplate_diamond","morethings_nodes:enhanced_tree","morethings_items:ingot_red"},
+		{"morethings_items:ingot_red","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_red"},
+		{"morethings_items:ingot_red","morethings_items:ingot_red","morethings_items:ingot_red","morethings_items:ingot_red","morethings_items:ingot_red"},
+	}
 })
 minetest.register_craft({
 	output = "morethings_armor:red_leggings",
 	recipe = {
-		{"morethings:red_ingot", "morethings:red_ingot", "morethings:red_ingot"},
-		{"morethings:red_ingot", "", "morethings:red_ingot"},
-		{"morethings:red_ingot", "", "morethings:red_ingot"},
-	},
+		{"morethings_items:ingot_red","morethings_items:ingot_red","morethings_items:ingot_red_enhanced","morethings_items:ingot_red","morethings_items:ingot_red"},
+		{"morethings_items:ingot_red","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_red"},
+		{"morethings_items:ingot_red","morethings_nodes:enhanced_tree","3d_armor:leggings_diamond","morethings_nodes:enhanced_tree","morethings_items:ingot_red"},
+		{"morethings_items:ingot_red","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_red"},
+		{"morethings_items:ingot_red","morethings_items:ingot_red","morethings_items:ingot_red","morethings_items:ingot_red","morethings_items:ingot_red"},
+	}
 })
 minetest.register_craft({
 	output = "morethings_armor:red_boots",
 	recipe = {
-		{"morethings:red_ingot", "", "morethings:red_ingot"},
-		{"morethings:red_ingot", "", "morethings:red_ingot"},
-	},
+		{"morethings_items:ingot_red","morethings_items:ingot_red","morethings_items:ingot_red_enhanced","morethings_items:ingot_red","morethings_items:ingot_red"},
+		{"morethings_items:ingot_red","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_red"},
+		{"morethings_items:ingot_red","morethings_nodes:enhanced_tree","3d_armor:boots_diamond","morethings_nodes:enhanced_tree","morethings_items:ingot_red"},
+		{"morethings_items:ingot_red","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_red"},
+		{"morethings_items:ingot_red","morethings_items:ingot_red","morethings_items:ingot_red","morethings_items:ingot_red","morethings_items:ingot_red"},
+	}
 })
 
 minetest.register_craft({
 	output = "morethings_armor:krypton_helmet",
 	recipe = {
-		{"morethings:krypton_ingot", "morethings:krypton_ingot", "morethings:krypton_ingot"},
-		{"morethings:krypton_ingot", "", "morethings:krypton_ingot"},
-		{"", "", ""},
-	},
+		{"morethings_items:ingot_krypton","morethings_items:ingot_krypton","morethings_items:ingot_red_enhanced","morethings_items:ingot_krypton","morethings_items:ingot_krypton"},
+		{"morethings_items:ingot_krypton","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_krypton"},
+		{"morethings_items:ingot_krypton","morethings_nodes:enhanced_tree","3d_armor:helmet_diamond","morethings_nodes:enhanced_tree","morethings_items:ingot_krypton"},
+		{"morethings_items:ingot_krypton","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_krypton"},
+		{"morethings_items:ingot_krypton","morethings_items:ingot_krypton","morethings_items:ingot_krypton","morethings_items:ingot_krypton","morethings_items:ingot_krypton"},
+	}
 })
 minetest.register_craft({
 	output = "morethings_armor:krypton_chestplate",
 	recipe = {
-		{"morethings:krypton_ingot", "", "morethings:krypton_ingot"},
-		{"morethings:krypton_ingot", "morethings:krypton_ingot", "morethings:krypton_ingot"},
-		{"morethings:krypton_ingot", "morethings:krypton_ingot", "morethings:krypton_ingot"},
-	},
+		{"morethings_items:ingot_krypton","morethings_items:ingot_krypton","morethings_items:ingot_red_enhanced","morethings_items:ingot_krypton","morethings_items:ingot_krypton"},
+		{"morethings_items:ingot_krypton","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_krypton"},
+		{"morethings_items:ingot_krypton","morethings_nodes:enhanced_tree","3d_armor:chestplate_diamond","morethings_nodes:enhanced_tree","morethings_items:ingot_krypton"},
+		{"morethings_items:ingot_krypton","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_krypton"},
+		{"morethings_items:ingot_krypton","morethings_items:ingot_krypton","morethings_items:ingot_krypton","morethings_items:ingot_krypton","morethings_items:ingot_krypton"},
+	}
 })
+
 minetest.register_craft({
 	output = "morethings_armor:krypton_leggings",
 	recipe = {
-		{"morethings:krypton_ingot", "morethings:krypton_ingot", "morethings:krypton_ingot"},
-		{"morethings:krypton_ingot", "", "morethings:krypton_ingot"},
-		{"morethings:krypton_ingot", "", "morethings:krypton_ingot"},
-	},
+		{"morethings_items:ingot_krypton","morethings_items:ingot_krypton","morethings_items:ingot_red_enhanced","morethings_items:ingot_krypton","morethings_items:ingot_krypton"},
+		{"morethings_items:ingot_krypton","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_krypton"},
+		{"morethings_items:ingot_krypton","morethings_nodes:enhanced_tree","3d_armor:leggings_diamond","morethings_nodes:enhanced_tree","morethings_items:ingot_krypton"},
+		{"morethings_items:ingot_krypton","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_krypton"},
+		{"morethings_items:ingot_krypton","morethings_items:ingot_krypton","morethings_items:ingot_krypton","morethings_items:ingot_krypton","morethings_items:ingot_krypton"},
+	}
 })
+
 minetest.register_craft({
 	output = "morethings_armor:krypton_boots",
 	recipe = {
-		{"morethings:krypton_ingot", "", "morethings:krypton_ingot"},
-		{"morethings:krypton_ingot", "", "morethings:krypton_ingot"},
-	},
+		{"morethings_items:ingot_krypton","morethings_items:ingot_krypton","morethings_items:ingot_red_enhanced","morethings_items:ingot_krypton","morethings_items:ingot_krypton"},
+		{"morethings_items:ingot_krypton","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_krypton"},
+		{"morethings_items:ingot_krypton","morethings_nodes:enhanced_tree","3d_armor:boots_diamond","morethings_nodes:enhanced_tree","morethings_items:ingot_krypton"},
+		{"morethings_items:ingot_krypton","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_krypton"},
+		{"morethings_items:ingot_krypton","morethings_items:ingot_krypton","morethings_items:ingot_krypton","morethings_items:ingot_krypton","morethings_items:ingot_krypton"},
+	}
 })
+
 
 minetest.register_craft({
 	output = "morethings_armor:mese_helmet",
 	recipe = {
-		{"morethings:mese_ingot", "morethings:mese_ingot", "morethings:mese_ingot"},
-		{"morethings:mese_ingot", "", "morethings:mese_ingot"},
-		{"", "", ""},
-	},
+		{"morethings_items:ingot_mese","morethings_items:ingot_mese","morethings_items:ingot_red_enhanced","morethings_items:ingot_mese","morethings_items:ingot_mese"},
+		{"morethings_items:ingot_mese","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_mese"},
+		{"morethings_items:ingot_mese","morethings_nodes:enhanced_tree","3d_armor:helmet_diamond","morethings_nodes:enhanced_tree","morethings_items:ingot_mese"},
+		{"morethings_items:ingot_mese","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_mese"},
+		{"morethings_items:ingot_mese","morethings_items:ingot_mese","morethings_items:ingot_mese","morethings_items:ingot_mese","morethings_items:ingot_mese"},
+	}
 })
 minetest.register_craft({
 	output = "morethings_armor:mese_chestplate",
 	recipe = {
-		{"morethings:mese_ingot", "", "morethings:mese_ingot"},
-		{"morethings:mese_ingot", "morethings:mese_ingot", "morethings:mese_ingot"},
-		{"morethings:mese_ingot", "morethings:mese_ingot", "morethings:mese_ingot"},
-	},
+		{"morethings_items:ingot_mese","morethings_items:ingot_mese","morethings_items:ingot_red_enhanced","morethings_items:ingot_mese","morethings_items:ingot_mese"},
+		{"morethings_items:ingot_mese","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_mese"},
+		{"morethings_items:ingot_mese","morethings_nodes:enhanced_tree","3d_armor:chestplate_diamond","morethings_nodes:enhanced_tree","morethings_items:ingot_mese"},
+		{"morethings_items:ingot_mese","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_mese"},
+		{"morethings_items:ingot_mese","morethings_items:ingot_mese","morethings_items:ingot_mese","morethings_items:ingot_mese","morethings_items:ingot_mese"},
+	}
 })
 minetest.register_craft({
 	output = "morethings_armor:mese_leggings",
 	recipe = {
-		{"morethings:mese_ingot", "morethings:mese_ingot", "morethings:mese_ingot"},
-		{"morethings:mese_ingot", "", "morethings:mese_ingot"},
-		{"morethings:mese_ingot", "", "morethings:mese_ingot"},
-	},
+		{"morethings_items:ingot_mese","morethings_items:ingot_mese","morethings_items:ingot_red_enhanced","morethings_items:ingot_mese","morethings_items:ingot_mese"},
+		{"morethings_items:ingot_mese","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_mese"},
+		{"morethings_items:ingot_mese","morethings_nodes:enhanced_tree","3d_armor:leggings_diamond","morethings_nodes:enhanced_tree","morethings_items:ingot_mese"},
+		{"morethings_items:ingot_mese","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_mese"},
+		{"morethings_items:ingot_mese","morethings_items:ingot_mese","morethings_items:ingot_mese","morethings_items:ingot_mese","morethings_items:ingot_mese"},
+	}
 })
 minetest.register_craft({
 	output = "morethings_armor:mese_boots",
 	recipe = {
-		{"morethings:mese_ingot", "", "morethings:mese_ingot"},
-		{"morethings:mese_ingot", "", "morethings:mese_ingot"},
-	},
+		{"morethings_items:ingot_mese","morethings_items:ingot_mese","morethings_items:ingot_red_enhanced","morethings_items:ingot_mese","morethings_items:ingot_mese"},
+		{"morethings_items:ingot_mese","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_mese"},
+		{"morethings_items:ingot_mese","morethings_nodes:enhanced_tree","3d_armor:boots_diamond","morethings_nodes:enhanced_tree","morethings_items:ingot_mese"},
+		{"morethings_items:ingot_mese","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_mese"},
+		{"morethings_items:ingot_mese","morethings_items:ingot_mese","morethings_items:ingot_mese","morethings_items:ingot_mese","morethings_items:ingot_mese"},
+	}
 })
 
 minetest.register_craft({
 	output = "morethings_armor:ghost_helmet",
 	recipe = {
-		{"morethings:ghost_ingot", "morethings:ghost_ingot", "morethings:ghost_ingot"},
-		{"morethings:ghost_ingot", "", "morethings:ghost_ingot"},
-		{"", "", ""},
-	},
+		{"morethings_items:ingot_ghost","morethings_items:ingot_ghost","morethings_items:ingot_red_enhanced","morethings_items:ingot_ghost","morethings_items:ingot_ghost"},
+		{"morethings_items:ingot_ghost","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_ghost"},
+		{"morethings_items:ingot_ghost","morethings_nodes:enhanced_tree","3d_armor:helmet_diamond","morethings_nodes:enhanced_tree","morethings_items:ingot_ghost"},
+		{"morethings_items:ingot_ghost","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_ghost"},
+		{"morethings_items:ingot_ghost","morethings_items:ingot_ghost","morethings_items:ingot_ghost","morethings_items:ingot_ghost","morethings_items:ingot_ghost"},
+	}
 })
 minetest.register_craft({
 	output = "morethings_armor:ghost_chestplate",
 	recipe = {
-		{"morethings:ghost_ingot", "", "morethings:ghost_ingot"},
-		{"morethings:ghost_ingot", "morethings:ghost_ingot", "morethings:ghost_ingot"},
-		{"morethings:ghost_ingot", "morethings:ghost_ingot", "morethings:ghost_ingot"},
-	},
+		{"morethings_items:ingot_ghost","morethings_items:ingot_ghost","morethings_items:ingot_red_enhanced","morethings_items:ingot_ghost","morethings_items:ingot_ghost"},
+		{"morethings_items:ingot_ghost","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_ghost"},
+		{"morethings_items:ingot_ghost","morethings_nodes:enhanced_tree","3d_armor:chestplate_diamond","morethings_nodes:enhanced_tree","morethings_items:ingot_ghost"},
+		{"morethings_items:ingot_ghost","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_ghost"},
+		{"morethings_items:ingot_ghost","morethings_items:ingot_ghost","morethings_items:ingot_ghost","morethings_items:ingot_ghost","morethings_items:ingot_ghost"},
+	}
 })
 minetest.register_craft({
 	output = "morethings_armor:ghost_leggings",
 	recipe = {
-		{"morethings:ghost_ingot", "morethings:ghost_ingot", "morethings:ghost_ingot"},
-		{"morethings:ghost_ingot", "", "morethings:ghost_ingot"},
-		{"morethings:ghost_ingot", "", "morethings:ghost_ingot"},
-	},
+		{"morethings_items:ingot_ghost","morethings_items:ingot_ghost","morethings_items:ingot_red_enhanced","morethings_items:ingot_ghost","morethings_items:ingot_ghost"},
+		{"morethings_items:ingot_ghost","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_ghost"},
+		{"morethings_items:ingot_ghost","morethings_nodes:enhanced_tree","3d_armor:leggings_diamond","morethings_nodes:enhanced_tree","morethings_items:ingot_ghost"},
+		{"morethings_items:ingot_ghost","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_ghost"},
+		{"morethings_items:ingot_ghost","morethings_items:ingot_ghost","morethings_items:ingot_ghost","morethings_items:ingot_ghost","morethings_items:ingot_ghost"},
+	}
 })
 minetest.register_craft({
 	output = "morethings_armor:ghost_boots",
 	recipe = {
-		{"morethings:ghost_ingot", "", "morethings:ghost_ingot"},
-		{"morethings:ghost_ingot", "", "morethings:ghost_ingot"},
-	},
+		{"morethings_items:ingot_ghost","morethings_items:ingot_ghost","morethings_items:ingot_red_enhanced","morethings_items:ingot_ghost","morethings_items:ingot_ghost"},
+		{"morethings_items:ingot_ghost","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_ghost"},
+		{"morethings_items:ingot_ghost","morethings_nodes:enhanced_tree","3d_armor:boots_diamond","morethings_nodes:enhanced_tree","morethings_items:ingot_ghost"},
+		{"morethings_items:ingot_ghost","morethings_items:golden_plate","morethings_nodes:enhanced_tree","morethings_items:golden_plate","morethings_items:ingot_ghost"},
+		{"morethings_items:ingot_ghost","morethings_items:ingot_ghost","morethings_items:ingot_ghost","morethings_items:ingot_ghost","morethings_items:ingot_ghost"},
+	}
 })
 
 minetest.register_craft({

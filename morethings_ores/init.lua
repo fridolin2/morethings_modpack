@@ -5,6 +5,16 @@ minetest.register_alias("morethings:ghost_ore", "morethings_ores:ghost_ore")
 
 -- Define Ore Block Nodes
 
+minetest.register_node("morethings_ores:platinum_ore", {
+	description = "Platinum Ore",
+	tiles = {"morethings_platinum_ore_block.png"},
+	stack_max = 10,
+	groups = {cracky=3},
+	sounds = default.node_sound_metal_defaults(),
+	drop = "morethings_items:platinum_lump",
+	is_ground_content = true,
+})
+
 minetest.register_node("morethings_ores:red_ore", {
 	description = "Red Ore",
 	tiles = {"morethings_red_ore_block.png"},
@@ -161,29 +171,36 @@ minetest.register_node("morethings_ores:salt_ore", {
 
 minetest.register_craft({
 	type = "cooking",
+	output = "morethings_items:ingot_platinum",
+	recipe = "morethings_items:platinum_lump",
+	cooktime = 150,
+})
+
+minetest.register_craft({
+	type = "cooking",
 	output = "morethings_crystals:red_crystal",
 	recipe = "morethings_items:red_crystal_shards",
-	cooktime = 180,
+	cooktime = 150,
 })
 
 minetest.register_craft({
 	type = "cooking",
 	output = "morethings_items:ingot_red",
 	recipe = "morethings_crystals:red_crystal",
-	cooktime = 120,
+	cooktime = 100,
 })
 
 minetest.register_craft({
 	type = "cooking",
 	output = "default:bronze_ingot",
 	recipe = "morethings_items:bronze_lump",
-	cooktime = 120,
+	cooktime = 40,
 })
 
 minetest.register_craft({
 	type = "cooking",
-	output = "morethings_items:ingot_red_empowered",
-	recipe = "morethings_crystals:red_crystal_empowered",
+	output = "morethings_items:ingot_red_enhanced",
+	recipe = "morethings_crystals:red_crystal_enhanced",
 	cooktime = 300,
 })
 
@@ -191,7 +208,7 @@ minetest.register_craft({
 	type = "cooking",
 	output = "morethings_items:ingot_obsidian",
 	recipe = "morethings_items:dust_refined_obsidian",
-	cooktime = 180,
+	cooktime = 100,
 })
 
 minetest.register_craft({
@@ -205,7 +222,7 @@ minetest.register_craft({
 	type = "cooking",
 	output = "morethings_items:ingot_krypton_base",
 	recipe = "morethings_items:lump_krypton",
-	cooktime = 40,
+	cooktime = 35,
 })
 
 minetest.register_craft({
@@ -231,8 +248,8 @@ minetest.register_craft({
 
 minetest.register_craft({
 	type = "cooking",
-	output = "morethings_items:ingot_red_empowered",
-	recipe = "morethings_crystals:red_crystal_empowered",
+	output = "morethings_items:ingot_red_enhanced",
+	recipe = "morethings_crystals:red_crystal_enhanced",
 	cooktime = 300,
 })
 
@@ -328,6 +345,17 @@ minetest.register_ore({
 	clust_size = 3,
 	y_min = -31000,
 	y_max = -200,
+})
+
+minetest.register_ore({
+	ore_type = "scatter",
+	ore = "morethings_ores:platinum_ore",
+	wherein = "default:stone",
+	clust_scarcity = 17*17*17,
+	clust_num_ores = 6,
+	clust_size = 2,
+	y_min = -31000,
+	y_max = -220,
 })
 
 minetest.register_ore({

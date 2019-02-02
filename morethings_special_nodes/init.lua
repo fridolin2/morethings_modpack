@@ -2,6 +2,7 @@ minetest.register_alias("morethings:furnace", "morethings_special_nodes:furnace"
 minetest.register_alias("morethings_special_nodes:itemframe", "itemframe:frame")
 dofile(minetest.get_modpath("morethings_special_nodes").."/morethings_furnace.lua")
 dofile(minetest.get_modpath("morethings_special_nodes").."/morethings_mese_posts.lua")
+dofile(minetest.get_modpath("morethings_special_nodes").."/morethings_doors.lua")
 
 
 minetest.register_node("morethings_special_nodes:ghostly_fire", {

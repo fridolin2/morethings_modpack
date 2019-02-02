@@ -24,6 +24,12 @@ minetest.register_alias("morethings:gold_shavings", "morethings_items:shavings_g
 minetest.register_alias("morethings_items:ingot_red_empowered", "morethings_items:ingot_red_enhanced")
 ---DEFINE CRAFT ITEMS
 
+minetest.register_craftitem("morethings_items:ingot_platinum", {
+	description = "Platinum Ingot",
+	inventory_image = "morethings_platinum_ingot.png",
+})
+
+
 minetest.register_craftitem("morethings_items:ingot_coal", {
 	description = "Coal Ingot",
 	inventory_image = "morethings_coal_ingot.png",
@@ -150,6 +156,26 @@ minetest.register_craftitem("morethings_items:diamond_rod", {
 	inventory_image = "morethings_diamond_rod.png",
 })
 
+minetest.register_craftitem("morethings_items:golden_plate", {
+	description = "Golden Plate",
+	inventory_image = "morethings_golden_plate.png",
+})
+
+minetest.register_craftitem("morethings_items:diamond_plate", {
+	description = "Diamond Plate",
+	inventory_image = "morethings_diamond_plate.png",
+})
+
+minetest.register_craftitem("morethings_items:platinum_plate", {
+	description = "Platinum Plate",
+	inventory_image = "morethings_platinum_plate.png",
+})
+
+minetest.register_craftitem("morethings_items:steel_plate", {
+	description = "Steel Plate",
+	inventory_image = "morethings_steel_plate.png",
+})
+
 minetest.register_craftitem("morethings_items:ingot_krypton_base", {
 	description = "Krypton Ingot Base",
 	inventory_image = "morethings_krypton_ingot_base.png",
@@ -257,9 +283,19 @@ minetest.register_craftitem("morethings_items:bundle_of_sticks", {
 	inventory_image = "morethings_bundle_of_sticks.png",
 })
 
+minetest.register_craftitem("morethings_items:lock", {
+	description = "Lock",
+	inventory_image = "morethings_lock_inv.png",
+})
+
 minetest.register_craftitem("morethings_items:bone", {
 	description = "Bone",
 	inventory_image = "morethings_bone.png",
+})
+
+minetest.register_craftitem("morethings_items:platinum_lump", {
+	description = "Platinum Lump", 
+	inventory_image = "morethings_platinum_lump.png", 
 })
 
 minetest.register_craftitem("morethings_items:bronze_lump", {
@@ -279,6 +315,42 @@ minetest.register_craft( {
 	type = "shapeless",
 	output = '"default:stick" 9',
 	recipe = {"morethings_items:bundle_of_sticks"},
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_items:golden_plate" 2',
+	recipe = {"default:gold_ingot", "default:gold_ingot", "default:gold_ingot", "default:gold_ingot", "morethings_items:obsidian_hammer"},
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_items:diamond_plate" 2',
+	recipe = {"default:diamond", "default:diamond", "default:diamond", "default:diamond", "morethings_items:obsidian_hammer"},
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_items:steel_plate" 2',
+	recipe = {"default:steel_ingot", "default:steel_ingot", "default:steel_ingot", "default:steel_ingot", "morethings_items:obsidian_hammer"},
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_items:platinum_plate" 2',
+	recipe = {
+	"morethings_items:ingot_platinum", 
+	"morethings_items:ingot_platinum", 
+	"morethings_items:ingot_platinum", 
+	"morethings_items:ingot_platinum", 
+	"morethings_items:obsidian_hammer"
+	},
+})
+
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_items:lock" 2',
+	recipe = {"default:gold_ingot", "default:steel_ingot"},
 })
 
 minetest.register_craft({
@@ -329,9 +401,11 @@ minetest.register_craft({
 minetest.register_craft({
 	output = "morethings_items:ingot_silk_touch",
 	recipe = {
-		{"morethings_items:cactus_spines", "morethings_nodes:soft_cactus", "morethings_items:cactus_spines"},
-		{"morethings_nodes:soft_cactus", "morethings_nodes:soft_cactus", "morethings_nodes:soft_cactus"},
-		{"morethings_items:cactus_spines", "morethings_nodes:soft_cactus", "morethings_items:cactus_spines"}
+		{"morethings_items:ingot_glass","morethings_items:ingot_red","morethings_items:ingot_red_enhanced","morethings_items:ingot_krypton","morethings_items:ingot_glass"},
+		{"morethings_items:ingot_red","morethings_items:ingot_mese","morethings_items:ingot_ghost","morethings_items:ingot_mese","morethings_items:ingot_krypton"},
+		{"morethings_items:ingot_red_enhanced","morethings_items:ingot_ghost","default:steelblock","morethings_items:ingot_ghost","morethings_items:ingot_red_enhanced"},
+		{"morethings_items:ingot_krypton","morethings_items:ingot_mese","morethings_items:ingot_ghost","morethings_items:ingot_mese","morethings_items:ingot_red"},
+		{"morethings_items:ingot_glass","morethings_items:ingot_krypton","morethings_items:ingot_red_enhanced","morethings_items:ingot_red","morethings_items:ingot_glass"},
 	}
 })
 
@@ -353,40 +427,28 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
-	output = '"morethings_items:dust_obsidian" 9',  
-	recipe = {
-		{"", "morethings_items:obsidian_hammer", ""},
-		{"", "default:obsidian", ""},
-		{"", "", ""}
-	}
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_items:dust_obsidian" 9',
+	recipe = {"morethings_items:obsidian_hammer", "default:obsidian"},
 })
 
-minetest.register_craft({
-	output = '"morethings_items:dust_diamond" 9', 
-	recipe = {
-		{"", "morethings_items:obsidian_hammer", ""},
-		{"", "default:diamond", ""},
-		{"", "", ""}
-	}
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_items:dust_diamond" 9',
+	recipe = {"morethings_items:obsidian_hammer", "default:diamond"},
 })
 
-minetest.register_craft({
-	output = "morethings_items:dust_refined_obsidian", 
-	recipe = {
-		{"", "morethings_items:dust_obsidian", ""},
-		{"", "morethings_items:dust_diamond", ""},
-		{"", "", ""}
-	}
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_items:dust_refined_obsidian" 9',
+	recipe = {"morethings_items:dust_diamond", "morethings_items:dust_obsidian"},
 })
 
-minetest.register_craft({
-	output = '"default:obsidian_shard" 18', 
-	recipe = {
-		{"", "morethings_items:obsidian_hammer", ""},
-		{"", "default:obsidian", "default:obsidian"},
-		{"", "", ""}
-	}
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"default:obsidian_shard" 18',
+	recipe = {"morethings_items:obsidian_hammer", "default:obsidian", "default:obsidian"},
 })
 
 minetest.register_craft({
@@ -407,31 +469,22 @@ minetest.register_craft({
 	}
 })
 
-minetest.register_craft({
-	output = "morethings_items:ingot_krypton 9", 
-	recipe = {
-		{"", "", ""},
-		{"", "morethings_items:krypton_block", ""},
-		{"", "", ""}
-	}
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_items:ingot_krypton" 9',
+	recipe = {"morethings_nodes:resource_block_krypton"},
 })
 
-minetest.register_craft({
-	output = "morethings_items:ingot_red 9", 
-	recipe = {
-		{"", "", ""},
-		{"", "morethings_items:red_block", ""},
-		{"", "", ""}
-	}
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_items:ingot_red" 9',
+	recipe = {"morethings_nodes:resource_block_red"},
 })
 
-minetest.register_craft({
-	output = "morethings_items:ingot_ghost 9", 
-	recipe = {
-		{"", "", ""},
-		{"", "morethings_items:ghost_block", ""},
-		{"", "", ""}
-	}
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_items:ingot_ghost" 9',
+	recipe = {"morethings_nodes:resource_block_ghost"},
 })
 
 minetest.register_craft({
@@ -489,11 +542,35 @@ minetest.register_craft({
 })
 
 
+minetest.register_craft( {
+	type = "shapeless",
+	output = '"morethings_items:shavings_gold" 9',
+	recipe = {"default:gold_lump"},
+})
+
+minetest.register_craft({
+	output = "default:paper 2", 
+	recipe = {
+		{"", "", ""},
+		{"morethings_items:scraps_of_paper", "morethings_items:scraps_of_paper", "morethings_items:scraps_of_paper"},
+		{"", "", ""}
+	}
+})
+
 minetest.register_craft({
 	output = "default:paper 2", 
 	recipe = {
 		{"morethings_items:scraps_of_paper", "morethings_items:scraps_of_paper", "morethings_items:scraps_of_paper"},
-		{"morethings_items:scraps_of_paper", "morethings_items:scraps_of_paper", "morethings_items:scraps_of_paper"},
+		{"", "", ""},
+		{"", "", ""}
+	}
+})
+
+minetest.register_craft({
+	output = "default:paper 2", 
+	recipe = {
+		{"", "", ""},
+		{"", "", ""}, 
 		{"morethings_items:scraps_of_paper", "morethings_items:scraps_of_paper", "morethings_items:scraps_of_paper"}
 	}
 })
