@@ -2,11 +2,7 @@
 
 
 -- flower_powder, bonemeal recipes
-minetest.register_craft({
-	type = "shapeless",
-	output = 'morethings_nature:flower_powder 4',
-	recipe = {"morethings_items:bone","group:dye" },
-})
+
 
 minetest.register_craft({
 	type = "shapeless",
@@ -24,6 +20,12 @@ minetest.register_craft({
 	type = "shapeless",
 	output = 'morethings_nature:flower_powder 6',
 	recipe = {"bones:bones", "group:dye"},
+})
+
+minetest.register_craft({
+	type = "shapeless",
+	output = 'morethings_nature:flower_powder 4',
+	recipe = {"morethings_items:bone","group:dye" },
 })
 
 local plants = {

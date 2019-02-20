@@ -14,7 +14,7 @@ minetest.register_craftitem("morethings_vault:green_button", {
 })
 
 minetest.register_craftitem("morethings_vault:screen", {
-	description = "A usles Screen",
+	description = "A useles Screen",
 	inventory_image = "vault_screen_inv.png",
 })
 
