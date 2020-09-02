@@ -52,6 +52,8 @@ local plants = {
 
 
 -- growing routine
+
+
 local function growth(pointed_thing)
 
 	local pos = pointed_thing.under
@@ -97,14 +99,6 @@ local function growth(pointed_thing)
 				minetest.swap_node(pos2,
 					{name = plants[math.random(1, #plants)]})
 			else
-
-				if node.name == "default:dirt_with_dry_grass" then
-					minetest.swap_node(pos2,
-						{name = "default:dry_grass_" .. math.random(1, 5)})
-				else
-					minetest.swap_node(pos2,
-						{name = "default:grass_" .. math.random(1, 5)})
-				end
 
 			end
 		end

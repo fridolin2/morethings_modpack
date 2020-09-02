@@ -13,6 +13,17 @@ minetest.register_craftitem("morethings_food:soft_cactus_slice_grilled", {
 	inventory_image = "morethings_soft_cactus_slice_grilled.png",
 })
 
+minetest.register_craftitem("morethings_food:tomato_soup", {
+	description = "Tomato Soup",
+	on_use = minetest.item_eat(4),
+	inventory_image = "morethings_tomato_soup.png",
+})
+
+minetest.register_craftitem("morethings_food:sea_weed_bowl", {
+	description = "Sea Weed Bowl",
+	on_use = minetest.item_eat(4),
+	inventory_image = "morethings_seaweed_bowl.png",
+})
 
 minetest.register_craft({
 	type = "cooking",
